@@ -1,0 +1,21 @@
+Removed Pin From Net: NetName=VDD33ST Pin=P0-1
+Removed Pin From Net: NetName=GND Pin=P0-2
+Removed Pin From Net: NetName=SWCLK Pin=P0-3
+Removed Pin From Net: NetName=SWDIO Pin=P0-4
+Change Component Footprint: Designator=P0 Old Footprint=61300411121 New Footprint=SAMTEC_TSW-104-06-L-S
+Change Component Comment : Designator=P0 Old Comment=2.54 New Comment=TSW-104-06-L-S
+Change Managed Component Library Link : Designator=P0 Old VaultGUID=B7D15EC3-160A-466F-A46C-7801FE6295A7 New VaultGUID=08C30A79-B4A7-418E-9B9D-B0CABDADF6B4 Old ItemGUID=6366F00F-2F5E-49CA-A393-A6C3EB69613C New ItemGUID=6E60C0BB-1625-4330-8CB2-1CBDC994A6CC Old RevisionGUID=C6D43FC7-CDCA-407E-97C0-23478C5E6237 New RevisionGUID=ED73539A-CCBA-4B85-A3CB-8FB3336C9124
+Change component parameters: Designator = "P0" ("P0"); Footprint = "61300411121"; UniqueID = "\UEBLNVMM" ("\UEBLNVMM")
+Change component parameters (AddParameter): Name = "Availability"; Value = "Unavailable"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Component Type"; Value = "Standard"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Design Item ID"; Value = "TSW-104-06-L-S"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "MP"; Value = "TSW-104-06-L-S"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Package"; Value = "None"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Pin Count"; Value = "4"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Price"; Value = "None"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Source"; Value = "TSW-104-06-L-S.SchLib"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Value"; Value = ""; VariantName = "[No Variations]"
+Added Pin To Net: NetName=VDD33ST Pin=P0-01
+Added Pin To Net: NetName=SWDIO Pin=P0-02
+Added Pin To Net: NetName=SWCLK Pin=P0-03
+Added Pin To Net: NetName=GND Pin=P0-04
