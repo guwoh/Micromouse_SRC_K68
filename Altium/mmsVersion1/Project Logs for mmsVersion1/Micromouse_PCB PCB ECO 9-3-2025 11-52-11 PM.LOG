@@ -1,0 +1,4 @@
+Added Pin To Net: NetName=PushA Pin=U_enA-5
+Added Net: Name=PushA
+Added Pin To Net: NetName=PushB Pin=U_enB-5
+Added Net: Name=PushB

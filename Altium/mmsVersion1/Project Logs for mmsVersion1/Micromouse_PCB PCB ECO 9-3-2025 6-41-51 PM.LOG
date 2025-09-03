@@ -1,0 +1,91 @@
+Added Component: Designator=U?(QFP50P1200X1200X160-64N)
+Add component (AddParameter): Name = "Case/Package"; Value = "LQFP-64 STMicroelectronics"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Check_prices"; Value = "https://www.snapeda.com/parts/STM32F405RGT6/STMicroelectronics/view-part/?ref=eda"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Component Type"; Value = "Standard"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Design Item ID"; Value = "STM32F405RGT6"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "MF"; Value = "STMicroelectronics"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "MP"; Value = "STM32F405RGT6"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Pins"; Value = "64"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "SnapEDA_Link"; Value = "https://www.snapeda.com/parts/STM32F405RGT6/STMicroelectronics/view-part/?ref=snap"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Source"; Value = "STM32F405RGT6.SchLib"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = ""; VariantName = "[No Variations]"
+Added Pin To Net: NetName=VDD33 Pin=U?-1
+Added Pin To Net: NetName=NetC1_1 Pin=U?-5
+Added Pin To Net: NetName=NetC2_1 Pin=U?-6
+Added Pin To Net: NetName=NetC3_2 Pin=U?-7
+Added Pin To Net: NetName=L_RV Pin=U?-8
+Added Pin To Net: NetName=R_RV Pin=U?-9
+Added Pin To Net: NetName=LF_RV Pin=U?-10
+Added Pin To Net: NetName=RF_RV Pin=U?-11
+Added Pin To Net: NetName=GND Pin=U?-12
+Added Pin To Net: NetName=VDDA Pin=U?-13
+Added Pin To Net: NetName=IN1 Pin=U?-14
+Added Pin To Net: NetName=IN2 Pin=U?-15
+Added Pin To Net: NetName=IN3 Pin=U?-16
+Added Pin To Net: NetName=IN4 Pin=U?-17
+Added Pin To Net: NetName=GND Pin=U?-18
+Added Pin To Net: NetName=VDD33 Pin=U?-19
+Added Pin To Net: NetName=LF_EM Pin=U?-24
+Added Pin To Net: NetName=LR_EM Pin=U?-25
+Added Pin To Net: NetName=IRP MPU Pin=U?-27
+Added Pin To Net: NetName=PB2 Pin=U?-28
+Added Pin To Net: NetName=SCL_enA Pin=U?-29
+Added Pin To Net: NetName=SDA_enA Pin=U?-30
+Added Pin To Net: NetName=VDD33 Pin=U?-32
+Added Pin To Net: NetName=DBL_5 Pin=U?-33
+Added Pin To Net: NetName=DBL_6 Pin=U?-34
+Added Pin To Net: NetName=DBL_7 Pin=U?-35
+Added Pin To Net: NetName=DBL_8 Pin=U?-36
+Added Pin To Net: NetName=RF_EM Pin=U?-37
+Added Pin To Net: NetName=DBL_3 Pin=U?-38
+Added Pin To Net: NetName=DBL_4 Pin=U?-39
+Added Pin To Net: NetName=SDA_enB Pin=U?-40
+Added Pin To Net: NetName=SCL_enB Pin=U?-41
+Added Pin To Net: NetName=TX Pin=U?-42
+Added Pin To Net: NetName=RX Pin=U?-43
+Added Pin To Net: NetName=SWDIO Pin=U?-46
+Added Pin To Net: NetName=VDD33 Pin=U?-48
+Added Pin To Net: NetName=SWCLK Pin=U?-49
+Added Pin To Net: NetName=OUT_enA Pin=U?-51
+Added Pin To Net: NetName=OUT_enB Pin=U?-52
+Added Pin To Net: NetName=BUZZER Pin=U?-57
+Added Pin To Net: NetName=SCL Pin=U?-58
+Added Pin To Net: NetName=SDA Pin=U?-59
+Added Pin To Net: NetName=BOOT0 Pin=U?-60
+Added Pin To Net: NetName=DBL_1 Pin=U?-61
+Added Pin To Net: NetName=DBL_2 Pin=U?-62
+Added Pin To Net: NetName=GND Pin=U?-63
+Added Pin To Net: NetName=VDD33 Pin=U?-64
+Added Pin To Net: NetName=NetC11_2 Pin=C11-2
+Added Pin To Net: NetName=NetC11_2 Pin=U?-31
+Added Net: Name=NetC11_2
+Added Pin To Net: NetName=NetC27_2 Pin=C27-2
+Added Pin To Net: NetName=NetC27_2 Pin=U?-47
+Added Net: Name=NetC27_2
+Added Pin To Net: NetName=NetLabel18 Pin=U?-22
+Added Net: Name=NetLabel18
+Added Pin To Net: NetName=NetLabel19 Pin=U?-23
+Added Net: Name=NetLabel19
+Added Pin To Net: NetName=NetLabel23 Pin=U?-21
+Added Pin To Net: NetName=NetLabel23 Pin=U?-44
+Added Net: Name=NetLabel23
+Added Pin To Net: NetName=NetLabel24 Pin=U?-45
+Added Net: Name=NetLabel24
+Added Pin To Net: NetName=NetLabel27 Pin=U?-50
+Added Net: Name=NetLabel27
+Added Pin To Net: NetName=NetLabel28 Pin=U?-26
+Added Net: Name=NetLabel28
+Added Pin To Net: NetName=NetLabel31 Pin=U?-55
+Added Net: Name=NetLabel31
+Added Pin To Net: NetName=NetLabel44 Pin=U?-54
+Added Net: Name=NetLabel44
+Added Pin To Net: NetName=NetLabel45 Pin=U?-4
+Added Net: Name=NetLabel45
+Added Pin To Net: NetName=NetLabel46 Pin=U?-3
+Added Net: Name=NetLabel46
+Added Pin To Net: NetName=NetLabel47 Pin=U?-2
+Added Net: Name=NetLabel47
+Added Pin To Net: NetName=NetLabel48 Pin=U?-53
+Added Net: Name=NetLabel48
+Added Pin To Net: NetName=NetLabel80 Pin=U?-56
+Added Net: Name=NetLabel80

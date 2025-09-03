@@ -1,0 +1,16 @@
+Removed Pin From Net: NetName=IRP MPU Pin=U?-27
+Removed Pin From Net: NetName=DBL_5 Pin=U?-33
+Removed Pin From Net: NetName=DBL_6 Pin=U?-34
+Removed Pin From Net: NetName=DBL_7 Pin=U?-35
+Removed Pin From Net: NetName=DBL_8 Pin=U?-36
+Removed Pin From Net: NetName=DBL_1 Pin=U?-61
+Removed Pin From Net: NetName=DBL_2 Pin=U?-62
+Added Pin To Net: NetName=DBL_1 Pin=U?-20
+Added Pin To Net: NetName=DBL_2 Pin=U?-21
+Added Pin To Net: NetName=DBL_3 Pin=U?-22
+Added Pin To Net: NetName=DBL_4 Pin=U?-23
+Added Pin To Net: NetName=DBL_5 Pin=U?-24
+Added Pin To Net: NetName=DBL_6 Pin=U?-25
+Added Pin To Net: NetName=DBL_7 Pin=U?-26
+Added Pin To Net: NetName=DBL_8 Pin=U?-27
+Added Pin To Net: NetName=IRP MPU Pin=U?-55

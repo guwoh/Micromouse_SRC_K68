@@ -1,0 +1,5 @@
+Added Pin To Net: NetName=VDDA Pin=U1-56
+Added Pin To Net: NetName=Push_A Pin=U_enA-5
+Added Net: Name=Push_A
+Added Pin To Net: NetName=Push_B Pin=U_enB-5
+Added Net: Name=Push_B

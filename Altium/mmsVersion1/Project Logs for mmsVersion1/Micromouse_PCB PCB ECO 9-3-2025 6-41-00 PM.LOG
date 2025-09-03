@@ -1,0 +1,4 @@
+Removed Pin From Net: NetName=GND Pin=R9-2
+Added Pin To Net: NetName=Push Pin=U_enA-5
+Added Pin To Net: NetName=Push Pin=U_enB-5
+Added Net: Name=Push

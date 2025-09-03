@@ -1,0 +1,21 @@
+Added Component: Designator=R16(RESC3216X60X45LL10T20)
+Add component (AddParameter): Name = "Manufacturer"; Value = "Vishay Dale"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Part Number"; Value = "CRCW120647K0FKEA"; VariantName = "[No Variations]"
+Added Component: Designator=R17(RESC3216X60X45LL10T20)
+Add component (AddParameter): Name = "Manufacturer"; Value = "Vishay Dale"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Part Number"; Value = "CRCW120647K0FKEA"; VariantName = "[No Variations]"
+Added Component: Designator=R18(RESC3216X60X45LL10T20)
+Add component (AddParameter): Name = "Manufacturer"; Value = "Vishay Dale"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Part Number"; Value = "CRCW120647K0FKEA"; VariantName = "[No Variations]"
+Added Component: Designator=R19(RESC3216X60X45LL10T20)
+Add component (AddParameter): Name = "Manufacturer"; Value = "Vishay Dale"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Part Number"; Value = "CRCW120647K0FKEA"; VariantName = "[No Variations]"
+Added Pin To Net: NetName=SCL_B Pin=R16-1
+Added Pin To Net: NetName=V_inB Pin=R16-2
+Added Pin To Net: NetName=SDA_B Pin=R17-1
+Added Pin To Net: NetName=V_inB Pin=R17-2
+Added Pin To Net: NetName=SCL_A Pin=R18-1
+Added Pin To Net: NetName=V_inA Pin=R18-2
+Added Pin To Net: NetName=SDA_A Pin=R19-1
+Added Pin To Net: NetName=V_inA Pin=R19-2
+Added Pin To Net: NetName=NetLabel80 Pin=U1-56

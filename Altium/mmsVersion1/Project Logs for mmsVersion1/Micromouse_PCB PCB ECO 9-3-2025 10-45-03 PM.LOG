@@ -1,0 +1,11 @@
+Removed Pin From Net: NetName=F_EM Pin=U?-24
+Removed Pin From Net: NetName=LR_EM Pin=U?-25
+Added Pin To Net: NetName=F_EM Pin=U?-2
+Added Pin To Net: NetName=LR_EM Pin=U?-3
+Change Net Name : Old Net Name=RF_EM New Net Name=NetLabel85
+Added Pin To Net: NetName=NetLabel82 Pin=U?-20
+Added Net: Name=NetLabel82
+Added Pin To Net: NetName=NetLabel83 Pin=U?-24
+Added Net: Name=NetLabel83
+Added Pin To Net: NetName=NetLabel84 Pin=U?-25
+Added Net: Name=NetLabel84

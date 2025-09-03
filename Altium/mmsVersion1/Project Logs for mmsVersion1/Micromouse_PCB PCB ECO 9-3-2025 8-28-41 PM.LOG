@@ -1,0 +1,11 @@
+Removed Pin From Net: NetName=V33 Pin=Q1-2
+Removed Pin From Net: NetName=V33 Pin=R_IR3-1
+Removed Pin From Net: NetName=V33 Pin=R_IR3-2
+Removed Pin From Net: NetName=V33 Pin=R_IR4-1
+Add component: Footprint Not Found CGX-G502DC
+Add Pin To Net: Unknown Pin: Pin DS4-1
+Added Pin To Net: NetName=NetDS4_2 Pin=Q1-2
+Added Pin To Net: NetName=NetDS4_2 Pin=R_IR3-1
+Added Pin To Net: NetName=NetDS4_2 Pin=R_IR3-2
+Added Pin To Net: NetName=NetDS4_2 Pin=R_IR4-1
+Added Net: Name=NetDS4_2
