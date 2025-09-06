@@ -13,3 +13,9 @@ Command-line arguments:  -os win32 -ws win32 -arch x86_64 -data D:\Micromouse_SR
 
 !ENTRY com.st.stm32cube.ide.mcu.ide 1 1 2025-09-06 13:22:38.322
 !MESSAGE Started RMI Server, listening on port 41337
+
+!ENTRY org.eclipse.cdt.core 1 0 2025-09-06 13:58:42.478
+!MESSAGE Indexed 'Micromouse_SRC_K68' (19 sources, 81 headers) in 10.5 sec: 4,342 declarations; 17,681 references; 0 unresolved inclusions; 1 syntax errors; 2 unresolved names (0.0091%)
+
+!ENTRY com.st.stm32cube.ide.mcu.debug.launch 2 0 2025-09-06 14:03:46.093
+!MESSAGE Won't launch debug session since we failed to locate the binary.
