@@ -1,0 +1,2 @@
+-Chân UART khớp với các module bluetooth được không ?
+-Cho thân ngắn lại tầm 1.6cm là đẹp nếu được 
