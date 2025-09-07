@@ -1,0 +1,49 @@
+Added Component: Designator=J4_B(SAMTEC_TSW-105-07-F-S)
+Add component (AddParameter): Name = "Availability"; Value = "Unavailable"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Component Type"; Value = "Standard"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Design Item ID"; Value = "TSW-105-07-F-S"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "MF"; Value = "Samtec"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "MP"; Value = "TSW-105-07-F-S"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Package"; Value = "None"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Pin Count"; Value = "5"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Price"; Value = "None"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Source"; Value = "TSW-105-07-F-S.SchLib"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = ""; VariantName = "[No Variations]"
+Added Pin To Net: NetName=V_inA Pin=C_enA-1
+Added Pin To Net: NetName=GND_inA Pin=C_enA-2
+Added Pin To Net: NetName=V_inB Pin=C_enB-1
+Added Pin To Net: NetName=GND_inB Pin=C_enB-2
+Added Pin To Net: NetName=SDA_A Pin=J4_A-01
+Added Pin To Net: NetName=SCL_A Pin=J4_A-02
+Added Pin To Net: NetName=OUT_A Pin=J4_A-03
+Added Pin To Net: NetName=GND_inA Pin=J4_A-04
+Added Pin To Net: NetName=V_inA Pin=J4_A-05
+Added Pin To Net: NetName=SDA_B Pin=J4_B-01
+Added Pin To Net: NetName=SCL_B Pin=J4_B-02
+Added Pin To Net: NetName=OUT_B Pin=J4_B-03
+Added Pin To Net: NetName=GND_inB Pin=J4_B-04
+Added Pin To Net: NetName=V_inB Pin=J4_B-05
+Added Pin To Net: NetName=SCL_B Pin=R16-1
+Added Pin To Net: NetName=V_inB Pin=R16-2
+Added Pin To Net: NetName=SDA_B Pin=R17-1
+Added Pin To Net: NetName=V_inB Pin=R17-2
+Added Pin To Net: NetName=SCL_A Pin=R18-1
+Added Pin To Net: NetName=V_inA Pin=R18-2
+Added Pin To Net: NetName=SDA_A Pin=R19-1
+Added Pin To Net: NetName=V_inA Pin=R19-2
+Added Pin To Net: NetName=V_inA Pin=U_enA-1
+Added Pin To Net: NetName=V_inA Pin=U_enA-2
+Added Pin To Net: NetName=OUT_A Pin=U_enA-3
+Added Pin To Net: NetName=GND_inA Pin=U_enA-4
+Added Pin To Net: NetName=PushA Pin=U_enA-5
+Added Pin To Net: NetName=SDA_A Pin=U_enA-6
+Added Pin To Net: NetName=SCL_A Pin=U_enA-7
+Added Pin To Net: NetName=V_inA Pin=U_enA-8
+Added Pin To Net: NetName=V_inB Pin=U_enB-1
+Added Pin To Net: NetName=V_inB Pin=U_enB-2
+Added Pin To Net: NetName=OUT_B Pin=U_enB-3
+Added Pin To Net: NetName=GND_inB Pin=U_enB-4
+Added Pin To Net: NetName=PushB Pin=U_enB-5
+Added Pin To Net: NetName=SDA_B Pin=U_enB-6
+Added Pin To Net: NetName=SCL_B Pin=U_enB-7
+Added Pin To Net: NetName=V_inB Pin=U_enB-8
