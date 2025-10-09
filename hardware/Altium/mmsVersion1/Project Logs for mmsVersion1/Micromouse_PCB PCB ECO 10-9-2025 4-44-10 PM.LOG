@@ -1,0 +1,16 @@
+Removed Pin From Net: NetName=V33 Pin=LS1-1
+Removed Pin From Net: NetName=NetD4_2 Pin=LS1-2
+Removed Pin From Net: NetName=LR_EM Pin=Q1-1
+Removed Pin From Net: NetName=F_EM Pin=Q2-1
+Added Pin To Net: NetName=NetD4_2 Pin=LS1-1
+Added Pin To Net: NetName=V33 Pin=LS1-2
+Added Pin To Net: NetName=LR_EM Pin=Q1-2
+Added Pin To Net: NetName=F_EM Pin=Q2-2
+Added Pin To Net: NetName=NetQ1_3 Pin=Q1-3
+Added Pin To Net: NetName=NetQ1_3 Pin=R_IR4-1
+Added Pin To Net: NetName=NetQ1_3 Pin=R_IR6-1
+Added Net: Name=NetQ1_3
+Added Pin To Net: NetName=NetQ2_3 Pin=Q2-3
+Added Pin To Net: NetName=NetQ2_3 Pin=R_IR3-1
+Added Pin To Net: NetName=NetQ2_3 Pin=R_IR5-1
+Added Net: Name=NetQ2_3
