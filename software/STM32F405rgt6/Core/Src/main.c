@@ -18,8 +18,10 @@
 /* USER CODE END Header */
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
-
-#include "stm32.h"
+/* USER CODE BEGIN Includes */
+#include <stdio.h>
+#include <string.h>
+/* USER CODE END Includes */
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
@@ -44,6 +46,8 @@
 /* Private variables ---------------------------------------------------------*/
 ADC_HandleTypeDef hadc1;
 
+UART_HandleTypeDef huart1;
+
 /* USER CODE BEGIN PV */
 
 /* USER CODE END PV */
@@ -52,6 +56,7 @@ ADC_HandleTypeDef hadc1;
 void SystemClock_Config(void);
 static void MX_GPIO_Init(void);
 static void MX_ADC1_Init(void);
+static void MX_USART1_UART_Init(void);
 /* USER CODE BEGIN PFP */
 
 /* USER CODE END PFP */
@@ -91,8 +96,15 @@ int main(void)
   /* Initialize all configured peripherals */
   MX_GPIO_Init();
   MX_ADC1_Init();
+  MX_USART1_UART_Init();
   /* USER CODE BEGIN 2 */
 
+  /* USER CODE END 2 */
+
+  /* USER CODE BEGIN 2 */
+  // Khai báo các biến
+  uint32_t adc_value;     // Biến lưu giá trị ADC (12-bit)
+  char uart_msg[50];      // Buffer (bộ đệm) để chứa chuỗi gửi đi
   /* USER CODE END 2 */
 
   /* Infinite loop */
@@ -102,7 +114,50 @@ int main(void)
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
+
+    // 1. Bật LED IR (Chân PC13)
+    // Giả sử LED IR được cấp nguồn khi chân ở mức HIGH.
+    // Nếu mạch của bạn là active-low (bật khi ở mức LOW), hãy dùng GPIO_PIN_RESET.
+    HAL_GPIO_WritePin(GPIOC, GPIO_PIN_13, GPIO_PIN_SET);
+
+    // 2. Đợi một chút để cảm biến ổn định
+    HAL_Delay(50); // Đợi 50ms
+
+    // 3. Khởi động ADC, chờ chuyển đổi và đọc giá trị
+    HAL_ADC_Start(&hadc1); // &hadc1 là tên biến handle ADC mặc định
+
+    // Chờ cho đến khi ADC chuyển đổi xong, với timeout là 100ms
+    if (HAL_ADC_PollForConversion(&hadc1, 100) == HAL_OK)
+    {
+      // Đọc giá trị ADC
+      adc_value = HAL_ADC_GetValue(&hadc1);
+    }
+    else
+    {
+      // Xử lý lỗi nếu ADC không chuyển đổi kịp (timeout)
+      adc_value = 0;
+    }
+
+    // Dừng ADC sau khi đọc xong
+    HAL_ADC_Stop(&hadc1);
+
+    // 4. Tắt LED IR (Chân PC13) để tiết kiệm điện
+    HAL_GPIO_WritePin(GPIOC, GPIO_PIN_13, GPIO_PIN_RESET);
+
+    // 5. Định dạng chuỗi (format string) để gửi qua UART
+    // %lu là định dạng cho 'unsigned long' (uint32_t)
+    // \r\n (Carriage Return + New Line) rất quan trọng để Arduino Monitor xuống dòng
+    sprintf(uart_msg, "Gia tri ADC: %lu\r\n", adc_value);
+
+    // 6. Gửi chuỗi qua UART
+    // &huart1 là tên biến handle UART mặc định
+    HAL_UART_Transmit(&huart1, (uint8_t*)uart_msg, strlen(uart_msg), 100);
+
+    // 7. Chờ 500ms trước khi lặp lại
+    HAL_Delay(500);
+
   }
+  /* USER CODE END 3 */
   /* USER CODE END 3 */
 }
 
@@ -186,7 +241,7 @@ static void MX_ADC1_Init(void)
 
   /** Configure for the selected ADC regular channel its corresponding rank in the sequencer and its sample time.
   */
-  sConfig.Channel = ADC_CHANNEL_11;
+  sConfig.Channel = ADC_CHANNEL_12;
   sConfig.Rank = 1;
   sConfig.SamplingTime = ADC_SAMPLETIME_3CYCLES;
   if (HAL_ADC_ConfigChannel(&hadc1, &sConfig) != HAL_OK)
@@ -200,18 +255,63 @@ static void MX_ADC1_Init(void)
 }
 
 /**
+  * @brief USART1 Initialization Function
+  * @param None
+  * @retval None
+  */
+static void MX_USART1_UART_Init(void)
+{
+
+  /* USER CODE BEGIN USART1_Init 0 */
+
+  /* USER CODE END USART1_Init 0 */
+
+  /* USER CODE BEGIN USART1_Init 1 */
+
+  /* USER CODE END USART1_Init 1 */
+  huart1.Instance = USART1;
+  huart1.Init.BaudRate = 115200;
+  huart1.Init.WordLength = UART_WORDLENGTH_8B;
+  huart1.Init.StopBits = UART_STOPBITS_1;
+  huart1.Init.Parity = UART_PARITY_NONE;
+  huart1.Init.Mode = UART_MODE_TX_RX;
+  huart1.Init.HwFlowCtl = UART_HWCONTROL_NONE;
+  huart1.Init.OverSampling = UART_OVERSAMPLING_16;
+  if (HAL_UART_Init(&huart1) != HAL_OK)
+  {
+    Error_Handler();
+  }
+  /* USER CODE BEGIN USART1_Init 2 */
+
+  /* USER CODE END USART1_Init 2 */
+
+}
+
+/**
   * @brief GPIO Initialization Function
   * @param None
   * @retval None
   */
 static void MX_GPIO_Init(void)
 {
+  GPIO_InitTypeDef GPIO_InitStruct = {0};
   /* USER CODE BEGIN MX_GPIO_Init_1 */
 
   /* USER CODE END MX_GPIO_Init_1 */
 
   /* GPIO Ports Clock Enable */
   __HAL_RCC_GPIOC_CLK_ENABLE();
+  __HAL_RCC_GPIOA_CLK_ENABLE();
+
+  /*Configure GPIO pin Output Level */
+  HAL_GPIO_WritePin(IR_LED_GPIO_Port, IR_LED_Pin, GPIO_PIN_RESET);
+
+  /*Configure GPIO pin : IR_LED_Pin */
+  GPIO_InitStruct.Pin = IR_LED_Pin;
+  GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
+  GPIO_InitStruct.Pull = GPIO_NOPULL;
+  GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
+  HAL_GPIO_Init(IR_LED_GPIO_Port, &GPIO_InitStruct);
 
   /* USER CODE BEGIN MX_GPIO_Init_2 */
 
