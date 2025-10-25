@@ -18,14 +18,11 @@
 /* USER CODE END Header */
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
-/* USER CODE BEGIN Includes */
-#include <stdio.h>
-#include <string.h>
-/* USER CODE END Includes */
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
-
+#include <stdio.h>
+#include <string.h>
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -101,12 +98,6 @@ int main(void)
 
   /* USER CODE END 2 */
 
-  /* USER CODE BEGIN 2 */
-  // Khai báo các biến
-  uint32_t adc_value;     // Biến lưu giá trị ADC (12-bit)
-  char uart_msg[50];      // Buffer (bộ đệm) để chứa chuỗi gửi đi
-  /* USER CODE END 2 */
-
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
   while (1)
@@ -157,7 +148,6 @@ int main(void)
     HAL_Delay(500);
 
   }
-  /* USER CODE END 3 */
   /* USER CODE END 3 */
 }
 
@@ -312,6 +302,12 @@ static void MX_GPIO_Init(void)
   GPIO_InitStruct.Pull = GPIO_NOPULL;
   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
   HAL_GPIO_Init(IR_LED_GPIO_Port, &GPIO_InitStruct);
+
+  /*Configure GPIO pin : PC10 */
+  GPIO_InitStruct.Pin = GPIO_PIN_10;
+  GPIO_InitStruct.Mode = GPIO_MODE_ANALOG;
+  GPIO_InitStruct.Pull = GPIO_NOPULL;
+  HAL_GPIO_Init(GPIOC, &GPIO_InitStruct);
 
   /* USER CODE BEGIN MX_GPIO_Init_2 */
 
