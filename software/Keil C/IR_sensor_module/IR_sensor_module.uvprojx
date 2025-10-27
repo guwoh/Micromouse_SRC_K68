@@ -340,7 +340,7 @@
               <MiscControls></MiscControls>
               <Define>STM32F405xx</Define>
               <Undefine></Undefine>
-              <IncludePath></IncludePath>
+              <IncludePath>.</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -382,12 +382,27 @@
       </TargetOption>
       <Groups>
         <Group>
-          <GroupName>Source Group 1</GroupName>
+          <GroupName>src</GroupName>
           <Files>
             <File>
-              <FileName>main.c</FileName>
+              <FileName>main_bm.c</FileName>
               <FileType>1</FileType>
-              <FilePath>.\main.c</FilePath>
+              <FilePath>.\main_bm.c</FilePath>
+            </File>
+            <File>
+              <FileName>m_systick.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\m_systick.c</FilePath>
+            </File>
+            <File>
+              <FileName>m_gpio.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\m_gpio.c</FilePath>
+            </File>
+            <File>
+              <FileName>m_clock.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\m_clock.c</FilePath>
             </File>
           </Files>
         </Group>
@@ -406,8 +421,8 @@
                   <RVCTOtherData>0</RVCTOtherData>
                   <ModuleSelection>0</ModuleSelection>
                   <IncludeInBuild>0</IncludeInBuild>
-                  <AlwaysBuild>2</AlwaysBuild>
-                  <GenerateAssemblyFile>2</GenerateAssemblyFile>
+                  <AlwaysBuild>0</AlwaysBuild>
+                  <GenerateAssemblyFile>0</GenerateAssemblyFile>
                   <AssembleAssemblyFile>2</AssembleAssemblyFile>
                   <PublicsOnly>2</PublicsOnly>
                   <StopOnExitCode>11</StopOnExitCode>
@@ -462,9 +477,9 @@
                   <RVCTOtherData>0</RVCTOtherData>
                   <ModuleSelection>0</ModuleSelection>
                   <IncludeInBuild>0</IncludeInBuild>
-                  <AlwaysBuild>2</AlwaysBuild>
-                  <GenerateAssemblyFile>2</GenerateAssemblyFile>
-                  <AssembleAssemblyFile>2</AssembleAssemblyFile>
+                  <AlwaysBuild>0</AlwaysBuild>
+                  <GenerateAssemblyFile>0</GenerateAssemblyFile>
+                  <AssembleAssemblyFile>0</AssembleAssemblyFile>
                   <PublicsOnly>2</PublicsOnly>
                   <StopOnExitCode>11</StopOnExitCode>
                   <CustomArgument></CustomArgument>
@@ -512,14 +527,14 @@
               <FilePath>.\STM32CubeMX\Target_1\STM32CubeMX\Src\stm32f4xx_hal_msp.c</FilePath>
               <FileOption>
                 <CommonProperty>
-                  <UseCPPCompiler>2</UseCPPCompiler>
+                  <UseCPPCompiler>0</UseCPPCompiler>
                   <RVCTCodeConst>0</RVCTCodeConst>
                   <RVCTZI>0</RVCTZI>
                   <RVCTOtherData>0</RVCTOtherData>
                   <ModuleSelection>0</ModuleSelection>
                   <IncludeInBuild>0</IncludeInBuild>
-                  <AlwaysBuild>2</AlwaysBuild>
-                  <GenerateAssemblyFile>2</GenerateAssemblyFile>
+                  <AlwaysBuild>0</AlwaysBuild>
+                  <GenerateAssemblyFile>0</GenerateAssemblyFile>
                   <AssembleAssemblyFile>2</AssembleAssemblyFile>
                   <PublicsOnly>2</PublicsOnly>
                   <StopOnExitCode>11</StopOnExitCode>
@@ -714,6 +729,31 @@
           </Files>
         </Group>
         <Group>
+          <GroupName>Inc</GroupName>
+          <Files>
+            <File>
+              <FileName>m_systick.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\m_systick.h</FilePath>
+            </File>
+            <File>
+              <FileName>m_pins.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\m_pins.h</FilePath>
+            </File>
+            <File>
+              <FileName>m_gpio.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\m_gpio.h</FilePath>
+            </File>
+            <File>
+              <FileName>m_clock.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\m_clock.h</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
           <GroupName>::CMSIS</GroupName>
         </Group>
         <Group>
@@ -748,5 +788,14 @@
     </components>
     <files/>
   </RTE>
+
+  <LayerInfo>
+    <Layers>
+      <Layer>
+        <LayName>IR_sensor_module</LayName>
+        <LayPrjMark>1</LayPrjMark>
+      </Layer>
+    </Layers>
+  </LayerInfo>
 
 </Project>
