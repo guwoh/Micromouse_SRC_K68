@@ -1,0 +1,5 @@
+load STM32F405RGTx
+project name STM32CubeMX
+project toolchain "MDK-ARM V5"
+project path "D:\Micromouse\Micromouse_SRC_K68\software\Keil C\bare_metal\STM32CubeMX\Target_1"
+SetCopyLibrary "copy only"

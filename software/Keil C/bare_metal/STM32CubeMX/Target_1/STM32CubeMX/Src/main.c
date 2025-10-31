@@ -1,9 +1,8 @@
 /* USER CODE BEGIN Header */
 /**
   ******************************************************************************
-  * @file         stm32f4xx_hal_msp.c
-  * @brief        This file provides code for the MSP Initialization
-  *               and de-Initialization codes.
+  * @file               : main.c
+  * @brief              : Main program body
   ******************************************************************************
   * @attention
   *
@@ -17,27 +16,28 @@
   ******************************************************************************
   */
 /* USER CODE END Header */
-
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
+
+/* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
-/* USER CODE BEGIN TD */
+/* USER CODE BEGIN PTD */
 
-/* USER CODE END TD */
+/* USER CODE END PTD */
 
 /* Private define ------------------------------------------------------------*/
-/* USER CODE BEGIN Define */
+/* USER CODE BEGIN PD */
 
-/* USER CODE END Define */
+/* USER CODE END PD */
 
 /* Private macro -------------------------------------------------------------*/
-/* USER CODE BEGIN Macro */
+/* USER CODE BEGIN PM */
 
-/* USER CODE END Macro */
+/* USER CODE END PM */
 
 /* Private variables ---------------------------------------------------------*/
 /* USER CODE BEGIN PV */
@@ -49,34 +49,47 @@
 
 /* USER CODE END PFP */
 
-/* External functions --------------------------------------------------------*/
-/* USER CODE BEGIN ExternalFunctions */
-
-/* USER CODE END ExternalFunctions */
-
+/* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
 
 /* USER CODE END 0 */
+
 /**
-  * Initializes the Global MSP.
+  * @brief  The application entry point.
+  * @retval int
   */
-void HAL_MspInit(void)
+int main(void)
 {
+  /* USER CODE BEGIN 1 */
 
-  /* USER CODE BEGIN MspInit 0 */
+  /* USER CODE END 1 */
 
-  /* USER CODE END MspInit 0 */
+  /* MCU Configuration--------------------------------------------------------*/
 
-  __HAL_RCC_SYSCFG_CLK_ENABLE();
-  __HAL_RCC_PWR_CLK_ENABLE();
+  /* USER CODE BEGIN Init */
 
-  /* System interrupt init*/
+  /* USER CODE END Init */
 
-  /* USER CODE BEGIN MspInit 1 */
+  /* USER CODE BEGIN SysInit */
 
-  /* USER CODE END MspInit 1 */
+  /* USER CODE END SysInit */
+
+  /* Initialize all configured peripherals */
+  /* USER CODE BEGIN 2 */
+
+  /* USER CODE END 2 */
+
+  /* Infinite loop */
+  /* USER CODE BEGIN WHILE */
+  while (1)
+  {
+    /* USER CODE END WHILE */
+
+    /* USER CODE BEGIN 3 */
+  }
+  /* USER CODE END 3 */
 }
 
-/* USER CODE BEGIN 1 */
+/* USER CODE BEGIN 4 */
 
-/* USER CODE END 1 */
+/* USER CODE END 4 */

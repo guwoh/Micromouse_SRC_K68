@@ -1,0 +1,16 @@
+build-gen:
+  board: 
+  compiler: AC6
+  device: STM32F405RGTx
+  generated-by: uVision version 5.42.0.0
+  processor:
+    core: Cortex-M4
+    dsp: on
+    endian: little
+    fpu: sp
+  add-path: 
+  components: 
+  apis: 
+  groups:
+    - group: Source Group 1
+      files: 

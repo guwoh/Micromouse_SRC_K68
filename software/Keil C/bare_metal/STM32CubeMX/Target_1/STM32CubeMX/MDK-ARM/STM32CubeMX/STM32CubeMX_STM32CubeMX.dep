@@ -1,0 +1,10 @@
+Dependencies for Project 'STM32CubeMX', Target 'STM32CubeMX': (DO NOT MODIFY !)
+CompilerVersion: <unknown>
+F (startup_stm32f405xx.s)(0x6904F378)()
+F (../Src/main.c)(0x6904F449)()
+F (../Src/stm32f4xx_it.c)(0x6904F1B7)()
+F (../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_ll_gpio.c)(0x68E0D5B2)()
+F (../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_ll_rcc.c)(0x68E0D5B2)()
+F (../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_ll_utils.c)(0x68E0D5B2)()
+F (../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_ll_exti.c)(0x68E0D5B2)()
+F (../Src/system_stm32f4xx.c)(0x68E0D5B2)()
