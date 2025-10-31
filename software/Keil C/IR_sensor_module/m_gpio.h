@@ -17,3 +17,5 @@ void gpio_nopull(GPIO_TypeDef *port, uint8_t pin);
 void gpio_write(GPIO_TypeDef *port, uint8_t pin, int level);
 void gpio_toggle(GPIO_TypeDef *port, uint8_t pin);
 void gpio_set_af(GPIO_TypeDef *port, uint8_t pin, uint8_t af);
+
+void gpio_config_analog(GPIO_TypeDef* port, uint8_t pin); // <--- THÊM DÒNG NÀY

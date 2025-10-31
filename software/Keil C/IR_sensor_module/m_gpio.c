@@ -41,3 +41,14 @@ void gpio_set_af(GPIO_TypeDef *port, uint8_t pin, uint8_t af) {
     port->AFR[1] = (port->AFR[1] & ~(0xFU << (p*4))) | ((uint32_t)af << (p*4));
   }
 }
+
+
+// (Gi? s? b?n dã có hàm gpio_mode, gpio_nopull...)
+// Ho?c vi?t m?t hàm chuyên d?ng:
+void gpio_config_analog(GPIO_TypeDef* port, uint8_t pin) {
+    // 1. Ð?t ch? d? là Analog (MODER[1:0] = 11)
+    port->MODER |= (3UL << (pin * 2)); // 3UL = 11 (binary)
+    
+    // 2. Không c?n kéo lên/kéo xu?ng (PUPDR[1:0] = 00)
+    port->PUPDR &= ~(3UL << (pin * 2));
+}
