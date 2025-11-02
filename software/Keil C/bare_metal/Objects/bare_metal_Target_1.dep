@@ -1,0 +1,3 @@
+Dependencies for Project 'bare_metal', Target 'Target_1': (DO NOT MODIFY !)
+CompilerVersion: 6230000::V6.23::ARMCLANG
+F (.\test.c)(0x6905886A)()

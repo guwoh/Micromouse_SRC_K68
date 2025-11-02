@@ -9,8 +9,14 @@ build-gen:
     endian: little
     fpu: sp
   add-path: 
-  components: 
+  components:
+    - component: ARM::CMSIS:CORE@6.1.1
+      from-pack: ARM::CMSIS@6.2.0
+    - component: Keil::Device:CubeMX@1.0.0
+      from-pack: Keil::STM32F4xx_DFP@3.1.1
   apis: 
   groups:
     - group: Source Group 1
-      files: 
+      files:
+        - file: D:/Micromouse/Micromouse_SRC_K68/software/Keil C/bare_metal/test.c
+          category: sourceC

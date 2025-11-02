@@ -17,18 +17,18 @@ Library Manager: ArmAr.exe V6.23
 Hex Converter:   FromElf.exe V6.23
 CPU DLL:         SARMCM3.DLL V5.42.0.0
 Dialog DLL:      DCM.DLL V1.17.5.0
-Target DLL:      STLink\ST-LINKIII-KEIL_SWO.dll V3.3.0.0
+Target DLL:      UL2CM3.DLL V1.164.14.0
 Dialog DLL:      TCM.DLL V1.56.6.0
  
 <h2>Project:</h2>
-D:\Micromouse\Micromouse_SRC_K68\software\Keil C\bare_metal\STM32CubeMX\Target_1\STM32CubeMX\MDK-ARM\STM32CubeMX.uvprojx
+D:\Micromouse\Micromouse_SRC_K68\software\Keil C\bare_metal\bare_metal.uvprojx
 Project File Date:  11/01/2025
 
 <h2>Output:</h2>
 *** Using Compiler 'V6.23', folder: 'C:\Users\hoang\AppData\Local\Keil_v5\ARM\ARMCLANG\Bin'
-Build target 'STM32CubeMX'
-Note: source file '../Src/main.c' - object file renamed from 'STM32CubeMX\main.o' to 'STM32CubeMX\main_1.o'.
-"STM32CubeMX\STM32CubeMX.axf" - 0 Error(s), 0 Warning(s).
+Build target 'Target_1'
+Error instantiating RTE components
+Error #545: Required input file from generator CubeMX: 'D:/Micromouse/Micromouse_SRC_K68/software/Keil C/bare_metal/STM32CubeMX/Target_1/bare_metal.cgen.yml' is missing
 
 <h2>Software Packages used:</h2>
 
@@ -42,14 +42,18 @@ Package Vendor: Keil
                 https://www.keil.com/pack/Keil.STM32F4xx_DFP.3.1.1.pack
                 Keil::STM32F4xx_DFP@3.1.1
                 STMicroelectronics STM32F4 Series Device Support
+   * Component: CubeMX Version: 1.0.0
 
 <h2>Collection of Component include folders:</h2>
-  ./RTE/_STM32CubeMX
+  ./RTE/_Target_1
   C:/Users/hoang/AppData/Local/Arm/Packs/ARM/CMSIS/6.2.0/CMSIS/Core/Include
 
 <h2>Collection of Component Files used:</h2>
 
    * Component: ARM::CMSIS:CORE@6.1.1
+
+   * Component: Keil::Device:CubeMX@1.0.0
+Target not created.
 Build Time Elapsed:  00:00:00
 </pre>
 </body>
