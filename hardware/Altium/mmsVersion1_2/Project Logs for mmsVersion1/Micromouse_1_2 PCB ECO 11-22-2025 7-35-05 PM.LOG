@@ -1,0 +1,30 @@
+Removed Pin From Net: NetName=IN3 Pin=U1-51
+Removed Pin From Net: NetName=IN4 Pin=U1-52
+Added Component: Designator=J4(SAMTEC_TSW-104-06-L-S)
+Add component (AddParameter): Name = "Availability"; Value = "Unavailable"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Component Type"; Value = "Standard"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Design Item ID"; Value = "TSW-104-06-L-S"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "MP"; Value = "TSW-104-06-L-S"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Package"; Value = "None"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Pin Count"; Value = "4"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Price"; Value = "None"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Source"; Value = "TSW-104-06-L-S.SchLib"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = ""; VariantName = "[No Variations]"
+Added Pin To Net: NetName=V33 Pin=C_IR1-1
+Added Pin To Net: NetName=V33 Pin=C_IR2-2
+Added Pin To Net: NetName=V33 Pin=C_IR3-2
+Added Pin To Net: NetName=V33 Pin=C_IR4-1
+Added Pin To Net: NetName=V33 Pin=DS1-2
+Added Pin To Net: NetName=V33 Pin=DS2-2
+Added Pin To Net: NetName=V33 Pin=DS3-2
+Added Pin To Net: NetName=V33 Pin=DS4-2
+Added Pin To Net: NetName=V33 Pin=J4-01
+Added Pin To Net: NetName=GND Pin=J4-04
+Added Pin To Net: NetName=IN3 Pin=U1-35
+Added Pin To Net: NetName=IN4 Pin=U1-36
+Added Pin To Net: NetName=RX_IMU Pin=J4-02
+Added Pin To Net: NetName=RX_IMU Pin=U1-52
+Added Net: Name=RX_IMU
+Added Pin To Net: NetName=TX_IMU Pin=J4-03
+Added Pin To Net: NetName=TX_IMU Pin=U1-51
+Added Net: Name=TX_IMU

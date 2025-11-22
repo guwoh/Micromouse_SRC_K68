@@ -1,0 +1,34 @@
+Removed Pin From Net: NetName=GND Pin=RB0-1
+Removed Pin From Net: NetName=LF_RV Pin=U1-10
+Added Component: Designator=P5(SMTC-TSM-103-01-X-SH-A)
+Add component (AddParameter): Name = "ComponentLink1Description"; Value = "Manufacturer URL"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink1URL"; Value = "http://www.samtec.com"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink2Description"; Value = "Datasheet"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink2URL"; Value = "http://www.samtec.com/documents/webfiles/pdf/TSM.PDF"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink3Description"; Value = "Package Specification"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink3URL"; Value = "http://www.samtec.com/documents/webfiles/cpdf/TSM-1XX-XX-XXX-SH-XX-XXX-XX-MKT1.pdf"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "DatasheetVersion"; Value = "F-214"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer"; Value = "Samtec"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Mounting Technology"; Value = "Surface Mount"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Orientation"; Value = "Horizontal"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "PackageDescription"; Value = "Terminal Strip Single Surface Mount"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "PackageReference"; Value = "TSM-103-01-X-SH-A"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "PackageVersion"; Value = "CD, 7/1991"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "PartNumber"; Value = "TSM-103-01-F-SH-A"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Pitch"; Value = "2.54 mm"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "RoHS"; Value = "True"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Temperature Range"; Value = "-55 to 125 degC"; VariantName = "[No Variations]"
+Add component: Footprint Not Found RESC2013X70X40ML20T20
+Add component: Footprint Not Found RESC2013X70X40ML20T20
+Add component: Footprint Not Found RESC2013X70X40ML20T20
+Added Pin To Net: NetName=VDD33 Pin=P5-1
+Added Pin To Net: NetName=GND Pin=P5-3
+Add Pin To Net: Unknown Pin: Pin R3-1
+Add Pin To Net: Unknown Pin: Pin R3-2
+Add Pin To Net: Unknown Pin: Pin R10-1
+Add Pin To Net: Unknown Pin: Pin R10-2
+Add Pin To Net: Unknown Pin: Pin R13-1
+Add Pin To Net: Unknown Pin: Pin R13-2
+Added Pin To Net: NetName=Bo0 Pin=P5-2
+Added Pin To Net: NetName=Bo0 Pin=RB0-1
+Added Net: Name=Bo0

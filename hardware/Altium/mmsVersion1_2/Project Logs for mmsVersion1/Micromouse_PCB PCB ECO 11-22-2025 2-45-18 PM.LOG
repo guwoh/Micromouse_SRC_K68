@@ -1,0 +1,54 @@
+Removed Pin From Net: NetName=VDD33 Pin=R3-1
+Removed Pin From Net: NetName=NetD1_2 Pin=R3-2
+Removed Pin From Net: NetName=VOUT5 Pin=R10-1
+Removed Pin From Net: NetName=NetD3_2 Pin=R10-2
+Removed Pin From Net: NetName=V33 Pin=R13-1
+Removed Pin From Net: NetName=NetD13_2 Pin=R13-2
+Change Footprint: Footprint Not Found RESC2013X70X40ML20T20
+Change Footprint: Footprint Not Found RESC2013X70X40ML20T20
+Change Footprint: Footprint Not Found RESC2013X70X40ML20T20
+Change Component Comment : Designator=R3 Old Comment=1K New Comment=Resistor 1k +/-1% 0805 125 mW
+Change Component Comment : Designator=R10 Old Comment=1K New Comment=Resistor 1k +/-1% 0805 125 mW
+Change Component Comment : Designator=R13 Old Comment=1K New Comment=Resistor 1k +/-1% 0805 125 mW
+Change Managed Component Library Link : Designator=R3 Old VaultGUID=B7D15EC3-160A-466F-A46C-7801FE6295A7 New VaultGUID=01076451-E5A9-4F84-95E8-F363B737B60C Old ItemGUID=09E32C22-0F4B-4BC1-B250-ADE8112EAD15 New ItemGUID=91F05995-747F-4B39-9765-AFDDC65D3AC4 Old RevisionGUID=ECD14F9D-B827-48F7-8201-7278B9D7E891 New RevisionGUID=83412F1F-2A1C-4B94-8D05-F753A23BA140
+Change Managed Component Library Link : Designator=R10 Old VaultGUID=B7D15EC3-160A-466F-A46C-7801FE6295A7 New VaultGUID=01076451-E5A9-4F84-95E8-F363B737B60C Old ItemGUID=09E32C22-0F4B-4BC1-B250-ADE8112EAD15 New ItemGUID=91F05995-747F-4B39-9765-AFDDC65D3AC4 Old RevisionGUID=ECD14F9D-B827-48F7-8201-7278B9D7E891 New RevisionGUID=83412F1F-2A1C-4B94-8D05-F753A23BA140
+Change Managed Component Library Link : Designator=R13 Old VaultGUID=B7D15EC3-160A-466F-A46C-7801FE6295A7 New VaultGUID=01076451-E5A9-4F84-95E8-F363B737B60C Old ItemGUID=09E32C22-0F4B-4BC1-B250-ADE8112EAD15 New ItemGUID=91F05995-747F-4B39-9765-AFDDC65D3AC4 Old RevisionGUID=ECD14F9D-B827-48F7-8201-7278B9D7E891 New RevisionGUID=83412F1F-2A1C-4B94-8D05-F753A23BA140
+Change component parameters: Designator = "R3" ("R3"); Footprint = "FP-RC1005-IPC_A"; UniqueID = "\SYPUKPKC" ("\SYPUKPKC")
+Change component parameters (AddParameter): Name = "Case/Package"; Value = "0805"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Max Operating Temperature"; Value = "155°C"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Min Operating Temperature"; Value = "-55°C"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Mounting Technology"; Value = "SM"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Pins"; Value = "2"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Power"; Value = "125mW"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "RoHS Compliant"; Value = "True"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Tolerance"; Value = "1%"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Value"; Value = "1k"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Voltage Rating"; Value = "150V"; VariantName = "[No Variations]"
+Change component parameters: Designator = "R10" ("R10"); Footprint = "FP-RC1005-IPC_A"; UniqueID = "\SVBZRVSQ" ("\SVBZRVSQ")
+Change component parameters (AddParameter): Name = "Case/Package"; Value = "0805"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Max Operating Temperature"; Value = "155°C"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Min Operating Temperature"; Value = "-55°C"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Mounting Technology"; Value = "SM"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Pins"; Value = "2"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Power"; Value = "125mW"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "RoHS Compliant"; Value = "True"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Tolerance"; Value = "1%"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Value"; Value = "1k"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Voltage Rating"; Value = "150V"; VariantName = "[No Variations]"
+Change component parameters: Designator = "R13" ("R13"); Footprint = "FP-RC1005-IPC_A"; UniqueID = "\PHQJKAJJ" ("\PHQJKAJJ")
+Change component parameters (AddParameter): Name = "Case/Package"; Value = "0805"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Max Operating Temperature"; Value = "155°C"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Min Operating Temperature"; Value = "-55°C"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Mounting Technology"; Value = "SM"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Pins"; Value = "2"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Power"; Value = "125mW"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "RoHS Compliant"; Value = "True"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Tolerance"; Value = "1%"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Value"; Value = "1k"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Voltage Rating"; Value = "150V"; VariantName = "[No Variations]"
+Added Pin To Net: NetName=NetD1_2 Pin=R3-1
+Added Pin To Net: NetName=VDD33 Pin=R3-2
+Added Pin To Net: NetName=NetD3_2 Pin=R10-1
+Added Pin To Net: NetName=VOUT5 Pin=R10-2
+Added Pin To Net: NetName=NetD13_2 Pin=R13-1
+Added Pin To Net: NetName=V33 Pin=R13-2

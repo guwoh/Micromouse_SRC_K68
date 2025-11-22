@@ -1,0 +1,18 @@
+Removed Pin From Net: NetName=V33 Pin=L_IR-1
+Removed Pin From Net: NetName=V33 Pin=LF_IR-1
+Removed Pin From Net: NetName=V33 Pin=R_IR-1
+Removed Pin From Net: NetName=NetR_IR6_2 Pin=R_IR-2
+Removed Pin From Net: NetName=V33 Pin=RF_IR-1
+Removed Pin From Net: NetName=NetR_IR3_2 Pin=RF_IR-2
+Added Pin To Net: NetName=V33 Pin=L_IR-2
+Added Pin To Net: NetName=V33 Pin=LF_IR-2
+Added Pin To Net: NetName=NetR_IR6_2 Pin=R_IR-1
+Added Pin To Net: NetName=V33 Pin=R_IR-2
+Added Pin To Net: NetName=NetR_IR3_2 Pin=RF_IR-1
+Added Pin To Net: NetName=V33 Pin=RF_IR-2
+Added Pin To Net: NetName=NetL_IR_1 Pin=L_IR-1
+Added Pin To Net: NetName=NetL_IR_1 Pin=R_IR4-2
+Added Net: Name=NetL_IR_1
+Added Pin To Net: NetName=NetLF_IR_1 Pin=LF_IR-1
+Added Pin To Net: NetName=NetLF_IR_1 Pin=R_IR5-2
+Added Net: Name=NetLF_IR_1

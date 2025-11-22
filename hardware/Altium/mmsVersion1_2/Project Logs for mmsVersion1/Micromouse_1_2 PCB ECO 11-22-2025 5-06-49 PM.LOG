@@ -1,0 +1,36 @@
+Removed Pin From Net: NetName=VDD33 Pin=P5-1
+Removed Pin From Net: NetName=Bo0 Pin=P5-2
+Removed Pin From Net: NetName=GND Pin=P5-3
+Change Component Footprint: Designator=P5 Old Footprint=SMTC-TSM-103-01-X-SH-A New Footprint=SMTC-TSW-104-08-X-S
+Change Component Comment : Designator=P5 Old Comment=TSM-103-01-F-SH-A New Comment=TSW-104-08-T-S
+Change Managed Component Library Link : Designator=P5 Old VaultGUID=B7D15EC3-160A-466F-A46C-7801FE6295A7 New VaultGUID=B7D15EC3-160A-466F-A46C-7801FE6295A7 Old ItemGUID=D9D7BABC-8795-4C0B-B1B8-16D63EE90C0D New ItemGUID=A88C9BA2-DBA5-42BE-B1B1-4BD68F91EBE7 Old RevisionGUID=5F702289-D867-4B13-B034-B13FBB72F247 New RevisionGUID=1981C251-A320-4CAC-872A-15DBC834565A
+Change component parameters: Designator = "P5" ("P5"); Footprint = "SMTC-TSM-103-01-X-SH-A"; UniqueID = "\CQPZSHIH" ("\CQPZSHIH")
+Change component parameters (AddParameter): Name = "ComponentLink1Description"; Value = "Manufacturer URL"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "ComponentLink1URL"; Value = "http://www.samtec.com"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "ComponentLink2Description"; Value = "Datasheet"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "ComponentLink2URL"; Value = "http://www.samtec.com/documents/webfiles/pdf/TSW_TH.PDF"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "ComponentLink3Description"; Value = "Package Specification"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "ComponentLink3URL"; Value = "http://www.samtec.com/documents/webfiles/cpdf/TSW-XXX-XX-XXX-X-XX-XXX-MKT.pdf"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "DatasheetVersion"; Value = "F-214"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Manufacturer"; Value = "Samtec"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Mounting Technology"; Value = "Through-hole"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Orientation"; Value = "Vertical"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "PackageDescription"; Value = ".025[0.64] SQ. Post Terminal Strip Assembly"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "PackageReference"; Value = "TSW-104-08-X-S"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "PackageVersion"; Value = "DM, 8/1988"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "PartNumber"; Value = "TSW-104-08-T-S"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Pitch"; Value = "2.54 mm"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "RoHS"; Value = "True"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Temperature Range"; Value = "-55 to 105 degC"; VariantName = "[No Variations]"
+Added Component: Designator=R3(FP-TFCR0805-MFG)
+Added Component: Designator=R10(FP-TFCR0805-MFG)
+Added Component: Designator=R13(FP-TFCR0805-MFG)
+Added Pin To Net: NetName=VDD33 Pin=P5-2
+Added Pin To Net: NetName=Bo0 Pin=P5-3
+Added Pin To Net: NetName=GND Pin=P5-4
+Added Pin To Net: NetName=VDD33 Pin=R3-1
+Added Pin To Net: NetName=NetD1_2 Pin=R3-2
+Added Pin To Net: NetName=VOUT5 Pin=R10-1
+Added Pin To Net: NetName=NetD3_2 Pin=R10-2
+Added Pin To Net: NetName=V33 Pin=R13-1
+Added Pin To Net: NetName=NetD13_2 Pin=R13-2
