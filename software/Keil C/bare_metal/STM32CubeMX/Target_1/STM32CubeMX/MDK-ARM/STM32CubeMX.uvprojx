@@ -437,7 +437,7 @@
           </Files>
         </Group>
         <Group>
-          <GroupName>SRC</GroupName>
+          <GroupName>Src</GroupName>
           <Files>
             <File>
               <FileName>main.c</FileName>

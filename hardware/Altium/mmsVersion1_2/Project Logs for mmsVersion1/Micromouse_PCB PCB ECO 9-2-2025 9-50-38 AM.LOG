@@ -1,0 +1,13 @@
+Added Component: Designator=U?(SOP-8_L4.9-W3.9-P1.27-LS6.0-BL)
+Add component (AddParameter): Name = "Add into BOM"; Value = "yes"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Convert to PCB"; Value = "yes"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Datasheet"; Value = "https://item.szlcsc.com/datasheet/MT6701CT-STD/3056853.html"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Device"; Value = "MT6701CT-STD"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "JLCPCB Part Class"; Value = "Extended Part"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "LCSC Part Name"; Value = "?????????????"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer"; Value = "MagnTek(???)"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer Part"; Value = "MT6701CT-STD"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Supplier"; Value = "LCSC"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Supplier Footprint"; Value = "SOP-8"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Supplier Part"; Value = "C2856764"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Symbol"; Value = "MT6701CT-STD"; VariantName = "[No Variations]"

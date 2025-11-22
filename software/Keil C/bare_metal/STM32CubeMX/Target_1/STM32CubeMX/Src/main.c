@@ -236,21 +236,23 @@ void My_DMA_Init(void)
 void My_ADC_Init(void)
 {
   // 1. Enable ADC1 clock
-  RCC->APB2ENR |= RCC_APB2ENR_ADC1EN;
+  RCC->APB2ENR |= RCC_APB2ENR_ADC1EN; // set bit adc1 lên 1 
 
   // 2. Configure ADC1 ( CR1 )
-  ADC1->CR1 |= ADC_CR1_SCAN;
+  ADC1->CR1 |= ADC_CR1_SCAN; // adc sẽ thực hiện scan nhiều kênh (nếu có)
 
   // 3. CONFIGURE ADC1 ( CR2 )
-  ADC1->CR2 |= ADC_CR2_CONT; 
-  ADC1->CR2 |= ADC_CR2_DMA;  
-  ADC1->CR2 |= ADC_CR2_DDS; 
+  ADC1->CR2 |= ADC_CR2_CONT; // adc sẽ thực hiện liên tục, cr2 register
+  ADC1->CR2 |= ADC_CR2_DMA;  // enable dma for adc
+  ADC1->CR2 |= ADC_CR2_DDS;  // dma sẽ request liên tục, dds is dma disable selection
   
   // 4. CONFIGURE ADC1 REGULAR SEQUENCE ( SQR3 )
   ADC1->SQR1 &= ~ADC_SQR1_L; // 0B0000 = 1 CONVERSION
+  // (Chúng ta chỉ đọc 1 kênh duy nhất)
+  // sqr1 register is for length of sequence
 
   // 5. CONFIGURE SEQUANCE REGISTER 3 ( SQR3 )
-  ADC1->SQR3 = (12 << ADC_SQR3_SQ1_Pos); 
+  ADC1->SQR3 = (12 << ADC_SQR3_SQ1_Pos); // 
 
   // 6. CONFIGURE SAMPLING TIME ( SMPR1 )
   //ADC1->SMPR1 |= (0b110 << ADC_SMPR1_SMP12_Pos); 

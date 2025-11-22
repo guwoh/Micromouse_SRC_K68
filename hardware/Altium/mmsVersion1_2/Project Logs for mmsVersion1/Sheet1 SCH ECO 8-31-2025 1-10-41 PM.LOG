@@ -1,0 +1,11 @@
+Remove Pin=P?-1 From Net=VDD33_OUT
+Remove Pin=U1-56 From Net=DEBUG
+Change Component Comment: Designator=C10 Old Comment=1uF New Comment=100nF
+Change Pin Designator/Name:  Old Designator=P0-2 Old Name=2 New Designator =4 New Name=4
+Change Pin Designator/Name:  Old Designator=P0-4 Old Name=4 New Designator =2 New Name=2
+Change Pin Designator/Name:  Old Designator=U1-1 Old Name=VBAT New Designator =PA0/WKUP New Name=14
+Change Pin Designator/Name:  Old Designator=U1-13 Old Name=VDDA New Designator =PB4 New Name=56
+Change Pin Designator/Name:  Old Designator=U1-14 Old Name=PA0/WKUP New Designator =PA1/USART2_RTS New Name=15
+Change Pin Designator/Name:  Old Designator=U1-15 Old Name=PA1/USART2_RTS New Designator =PA2/USART2_TX New Name=16
+Change Pin Designator/Name:  Old Designator=U1-16 Old Name=PA2/USART2_TX New Designator =PA3/USART2_RX New Name=17
+Change Pin Designator/Name:  Old Designator=U1-17 Old Name=PA3/USART2_RX New Designator =PA4/USART2_CK New Name=20

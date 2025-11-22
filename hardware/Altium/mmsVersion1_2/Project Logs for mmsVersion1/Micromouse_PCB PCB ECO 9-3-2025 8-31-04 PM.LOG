@@ -1,0 +1,10 @@
+Change Component Designator: OldDesignator=R_IR6 NewDesignator=R_IR3
+Add component: Footprint Not Found CGX-G502DC
+Added Component: Designator=R_IR6(RESC2013X50X30NL20T20)
+Add component (AddParameter): Name = "Manufacturer"; Value = "Vishay Dale"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Part Number"; Value = "CRCW080510R0FKEA"; VariantName = "[No Variations]"
+Add Pin To Net: Unknown Pin: Pin DS4-1
+Added Pin To Net: NetName=NetQ1_2 Pin=Q1-2
+Added Pin To Net: NetName=NetQ1_2 Pin=R_IR4-1
+Added Pin To Net: NetName=NetQ1_2 Pin=R_IR6-1
+Added Net: Name=NetQ1_2

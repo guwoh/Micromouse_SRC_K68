@@ -1,0 +1,11 @@
+Add Pin To Net: Pin=Q1-1 Old Net=NetQ1_1 New Net=LR_EM
+Add Pin To Net: Pin=Q2-1 Old Net=NetQ2_1 New Net=F_EM
+Add Pin To Net: Pin=R_IR1-2 Old Net=NetR_IR1_2 New Net=LR_EM
+Change Pin Designator/Name:  Old Designator=LS1-1 Old Name=C New Designator =A New Name=2
+Change Pin Designator/Name:  Old Designator=LS1-2 Old Name=A New Designator =C New Name=1
+Change Pin Designator/Name:  Old Designator=Q1-1 Old Name=G New Designator =S New Name=2
+Change Pin Designator/Name:  Old Designator=Q1-2 Old Name=S New Designator =D New Name=3
+Change Pin Designator/Name:  Old Designator=Q2-1 Old Name=G New Designator =S New Name=2
+Change Pin Designator/Name:  Old Designator=Q2-2 Old Name=S New Designator =D New Name=3
+Change Pin Designator/Name:  Old Designator=Q4-2 Old Name=S New Designator =D New Name=3
+Change Pin Designator/Name:  Old Designator=Q4-3 Old Name=D New Designator =S New Name=2

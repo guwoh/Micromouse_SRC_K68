@@ -1,0 +1,3 @@
+Remove Pin=Q2-2 From Net=F_EM
+Change Pin Designator/Name:  Old Designator=LS1-1 Old Name=C New Designator =A New Name=2
+Change Pin Designator/Name:  Old Designator=LS1-2 Old Name=A New Designator =C New Name=1

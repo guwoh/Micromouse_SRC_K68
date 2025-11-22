@@ -1,0 +1,9 @@
+Removed Pin From Net: NetName=TX Pin=P1-2
+Removed Pin From Net: NetName=RX Pin=P1-3
+Removed Pin From Net: NetName=GND Pin=P1-4
+Change Component Comment : Designator=R7 Old Comment=8.2K New Comment=10K
+Change Component Comment : Designator=R8 Old Comment=43K New Comment=51K
+Change Component Designator: OldDesignator=U? NewDesignator=U1
+Added Pin To Net: NetName=GND Pin=P1-2
+Added Pin To Net: NetName=TX Pin=P1-3
+Added Pin To Net: NetName=RX Pin=P1-4

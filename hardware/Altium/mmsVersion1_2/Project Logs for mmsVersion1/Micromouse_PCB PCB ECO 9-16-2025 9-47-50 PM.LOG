@@ -1,0 +1,4 @@
+Change Component Designator: OldDesignator=SW1_RST NewDesignator=RST
+Change Component Designator: OldDesignator=SW_BT0 NewDesignator=BOOT0
+Change Component Designator: OldDesignator=SW_BT1 NewDesignator=DEBUG
+Change Net Name : Old Net Name=NetR_BT0_1_2 New Net Name=NetBOOT0_1

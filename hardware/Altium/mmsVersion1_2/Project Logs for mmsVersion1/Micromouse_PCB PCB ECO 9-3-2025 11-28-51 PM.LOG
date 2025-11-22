@@ -1,0 +1,12 @@
+Removed Pin From Net: NetName=SCL_enA Pin=U?-29
+Removed Pin From Net: NetName=SDA_enA Pin=U?-30
+Removed Pin From Net: NetName=SDA_enB Pin=U?-40
+Removed Pin From Net: NetName=SCL_enB Pin=U?-41
+Removed Pin From Net: NetName=OUT_enA Pin=U?-51
+Removed Pin From Net: NetName=OUT_enB Pin=U?-52
+Added Pin To Net: NetName=SCL_enB Pin=U?-29
+Added Pin To Net: NetName=SDA_enB Pin=U?-30
+Added Pin To Net: NetName=SDA_enA Pin=U?-40
+Added Pin To Net: NetName=SCL_enA Pin=U?-41
+Added Pin To Net: NetName=OUT_enB Pin=U?-51
+Added Pin To Net: NetName=OUT_enA Pin=U?-52

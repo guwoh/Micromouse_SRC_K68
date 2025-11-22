@@ -1,0 +1,172 @@
+Removed Pin From Net: NetName=DBL_3 Pin=U1-29
+Removed Pin From Net: NetName=DBL_4 Pin=U1-30
+Change Component Comment : Designator=R8 Old Comment=36K New Comment=43K
+Change Component Designator: OldDesignator=J3 NewDesignator=J3_A
+Change Component Designator: OldDesignator=J4 NewDesignator=J3_B
+Change Component Designator: OldDesignator=U? NewDesignator=U_enA
+Added Component: Designator=C_enA(FP-C1206C-EB-MFG)
+Add component (AddParameter): Name = "Automotive"; Value = "Yes"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Automotive Grade"; Value = "Grade 0"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Capacitance"; Value = "10 pF"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Category"; Value = "Cap"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink2Description"; Value = "Datasheet"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink2URL"; Value = "https://content.kemet.com/datasheets/KEM_C1007_X8R_ULTRA_150C_SMD.pdf"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Device Class L1"; Value = "Passive Components"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Device Class L2"; Value = "Capacitors"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Device Class L3"; Value = "Ceramic Capacitors"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Height"; Value = "0.88mm"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Ipc Land Pattern Name"; Value = "CAPC320160X78"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Lead Free"; Value = "Yes"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer"; Value = "KEMET"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer Part Number"; Value = "C1206C100J5GAC"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Material"; Value = "Ceramic"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Mouser Description"; Value = "Multilayer Ceramic Capacitors MLCC - SMD/SMT 50volts 10pF 5% C0G"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Octopart"; Value = "https://octopart.com/c1206c100j5gac-kemet-1357555"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Package"; Value = "C1206C-EB"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "RoHS"; Value = "TRUE"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Temperature"; Value = "-55°C to +150°C"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Temperature Characteristic"; Value = "C0G"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Temperature Coefficient"; Value = "15%"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Temperature Range High"; Value = "+150°C"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Temperature Range Low"; Value = "-55°C"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Tolerance"; Value = "0.05"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = "10 pF"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Voltage Rating"; Value = "50 V"; VariantName = "[No Variations]"
+Added Component: Designator=C_enB(FP-C1206C-EB-MFG)
+Add component (AddParameter): Name = "Automotive"; Value = "Yes"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Automotive Grade"; Value = "Grade 0"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Capacitance"; Value = "10 pF"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Category"; Value = "Cap"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink2Description"; Value = "Datasheet"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink2URL"; Value = "https://content.kemet.com/datasheets/KEM_C1007_X8R_ULTRA_150C_SMD.pdf"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Device Class L1"; Value = "Passive Components"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Device Class L2"; Value = "Capacitors"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Device Class L3"; Value = "Ceramic Capacitors"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Height"; Value = "0.88mm"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Ipc Land Pattern Name"; Value = "CAPC320160X78"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Lead Free"; Value = "Yes"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer"; Value = "KEMET"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer Part Number"; Value = "C1206C100J5GAC"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Material"; Value = "Ceramic"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Mouser Description"; Value = "Multilayer Ceramic Capacitors MLCC - SMD/SMT 50volts 10pF 5% C0G"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Octopart"; Value = "https://octopart.com/c1206c100j5gac-kemet-1357555"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Package"; Value = "C1206C-EB"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "RoHS"; Value = "TRUE"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Temperature"; Value = "-55°C to +150°C"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Temperature Characteristic"; Value = "C0G"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Temperature Coefficient"; Value = "15%"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Temperature Range High"; Value = "+150°C"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Temperature Range Low"; Value = "-55°C"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Tolerance"; Value = "0.05"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = "10 pF"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Voltage Rating"; Value = "50 V"; VariantName = "[No Variations]"
+Added Component: Designator=J4_A(SAMTEC_TSW-105-07-F-S)
+Add component (AddParameter): Name = "Availability"; Value = "Unavailable"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Component Type"; Value = "Standard"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Design Item ID"; Value = "TSW-105-07-F-S"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "MF"; Value = "Samtec"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "MP"; Value = "TSW-105-07-F-S"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Package"; Value = "None"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Pin Count"; Value = "5"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Price"; Value = "None"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Source"; Value = "TSW-105-07-F-S.SchLib"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = ""; VariantName = "[No Variations]"
+Added Component: Designator=J4_B(SAMTEC_TSW-105-07-F-S)
+Add component (AddParameter): Name = "Availability"; Value = "Unavailable"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Component Type"; Value = "Standard"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Design Item ID"; Value = "TSW-105-07-F-S"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "MF"; Value = "Samtec"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "MP"; Value = "TSW-105-07-F-S"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Package"; Value = "None"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Pin Count"; Value = "5"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Price"; Value = "None"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Source"; Value = "TSW-105-07-F-S.SchLib"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = ""; VariantName = "[No Variations]"
+Added Component: Designator=R14(RESC3216X60X45LL10T20)
+Add component (AddParameter): Name = "Manufacturer"; Value = "Vishay Dale"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Part Number"; Value = "CRCW120647K0FKEA"; VariantName = "[No Variations]"
+Added Component: Designator=R15(RESC3216X60X45LL10T20)
+Add component (AddParameter): Name = "Manufacturer"; Value = "Vishay Dale"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Part Number"; Value = "CRCW120647K0FKEA"; VariantName = "[No Variations]"
+Add component: Footprint Not Found RESC2013X70X40ML20T20
+Add component: Footprint Not Found RESC2013X70X40ML20T20
+Add component: Footprint Not Found RESC2013X70X40ML20T20
+Add component: Footprint Not Found RESC2013X70X40ML20T20
+Added Component: Designator=U_enA?(SOP-8_L4.9-W3.9-P1.27-LS6.0-BL)
+Add component (AddParameter): Name = "Add into BOM"; Value = "yes"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Convert to PCB"; Value = "yes"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Datasheet"; Value = "https://item.szlcsc.com/datasheet/MT6701CT-STD/3056853.html"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Device"; Value = "MT6701CT-STD"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "JLCPCB Part Class"; Value = "Extended Part"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "LCSC Part Name"; Value = "?????????????"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer"; Value = "MagnTek(???)"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer Part"; Value = "MT6701CT-STD"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Supplier"; Value = "LCSC"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Supplier Footprint"; Value = "SOP-8"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Supplier Part"; Value = "C2856764"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Symbol"; Value = "MT6701CT-STD"; VariantName = "[No Variations]"
+Added Pin To Net: NetName=GND Pin=J3_A-04
+Added Pin To Net: NetName=V33 Pin=J3_A-05
+Added Pin To Net: NetName=GND Pin=J3_B-04
+Added Pin To Net: NetName=V33 Pin=J3_B-05
+Added Pin To Net: NetName=SDA Pin=R14-1
+Added Pin To Net: NetName=V33 Pin=R14-2
+Added Pin To Net: NetName=SCL Pin=R15-1
+Added Pin To Net: NetName=V33 Pin=R15-2
+Added Pin To Net: NetName=DBL_3 Pin=U1-38
+Added Pin To Net: NetName=DBL_4 Pin=U1-39
+Added Pin To Net: NetName=GND_inA Pin=C_enA-2
+Added Pin To Net: NetName=GND_inA Pin=J4_A-04
+Added Pin To Net: NetName=GND_inA Pin=U_enA-4
+Added Net: Name=GND_inA
+Added Pin To Net: NetName=GND_inB Pin=C_enB-2
+Added Pin To Net: NetName=GND_inB Pin=J4_B-04
+Added Pin To Net: NetName=GND_inB Pin=U_enA?-4
+Added Net: Name=GND_inB
+Added Pin To Net: NetName=NetLabel80 Pin=U1-56
+Added Net: Name=NetLabel80
+Added Pin To Net: NetName=OUT_enA Pin=J3_A-03
+Added Pin To Net: NetName=OUT_enA Pin=J4_A-03
+Added Pin To Net: NetName=OUT_enA Pin=U_enA-3
+Added Net: Name=OUT_enA
+Added Pin To Net: NetName=OUT_enB Pin=J3_B-03
+Added Pin To Net: NetName=OUT_enB Pin=J4_B-03
+Added Pin To Net: NetName=OUT_enB Pin=U_enA?-3
+Added Net: Name=OUT_enB
+Added Pin To Net: NetName=Push Pin=U_enA-5
+Added Pin To Net: NetName=Push Pin=U_enA?-5
+Added Net: Name=Push
+Added Pin To Net: NetName=SCL_enA Pin=J3_A-02
+Added Pin To Net: NetName=SCL_enA Pin=J4_A-02
+Added Pin To Net: NetName=SCL_enA Pin=U1-29
+Added Pin To Net: NetName=SCL_enA Pin=U_enA-7
+Added Net: Name=SCL_enA
+Added Pin To Net: NetName=SCL_enB Pin=J3_B-02
+Added Pin To Net: NetName=SCL_enB Pin=J4_B-02
+Added Pin To Net: NetName=SCL_enB Pin=U1-41
+Added Pin To Net: NetName=SCL_enB Pin=U_enA?-7
+Added Net: Name=SCL_enB
+Added Pin To Net: NetName=SDA_enA Pin=J3_A-01
+Added Pin To Net: NetName=SDA_enA Pin=J4_A-01
+Added Pin To Net: NetName=SDA_enA Pin=U1-30
+Added Pin To Net: NetName=SDA_enA Pin=U_enA-6
+Added Net: Name=SDA_enA
+Added Pin To Net: NetName=SDA_enB Pin=J3_B-01
+Added Pin To Net: NetName=SDA_enB Pin=J4_B-01
+Added Pin To Net: NetName=SDA_enB Pin=U1-40
+Added Pin To Net: NetName=SDA_enB Pin=U_enA?-6
+Added Net: Name=SDA_enB
+Added Pin To Net: NetName=V_inA Pin=C_enA-1
+Added Pin To Net: NetName=V_inA Pin=J4_A-05
+Added Pin To Net: NetName=V_inA Pin=U_enA-1
+Added Pin To Net: NetName=V_inA Pin=U_enA-2
+Added Pin To Net: NetName=V_inA Pin=U_enA-8
+Added Net: Name=V_inA
+Added Pin To Net: NetName=V_inB Pin=C_enB-1
+Added Pin To Net: NetName=V_inB Pin=J4_B-05
+Added Pin To Net: NetName=V_inB Pin=U_enA?-1
+Added Pin To Net: NetName=V_inB Pin=U_enA?-2
+Added Pin To Net: NetName=V_inB Pin=U_enA?-8
+Added Net: Name=V_inB
+Added Rule: Name=Schematic Supply Nets_9
+Added Rule: Name=Schematic Supply Nets_10

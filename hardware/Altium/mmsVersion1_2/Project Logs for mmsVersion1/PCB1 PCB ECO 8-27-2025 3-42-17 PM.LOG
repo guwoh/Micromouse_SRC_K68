@@ -1,0 +1,62 @@
+Removed Pin From Net: NetName=NetDS2_2 Pin=DS3-1
+Change Component Footprint: Designator=P2 Old Footprint=61300211121 New Footprint=61300211121
+Change Component Footprint: Designator=P3 Old Footprint=61300211121 New Footprint=61300211121
+Change Component Footprint: Designator=P0 Old Footprint=61300411121 New Footprint=61300411121
+Change Component Footprint: Designator=P1 Old Footprint=61300411121 New Footprint=61300411121
+Change Component Footprint: Designator=D4 Old Footprint=FP-MA02A-MFG New Footprint=FP-MA02A-MFG
+Change Component Footprint: Designator=D_3V3 Old Footprint=FP-MA02A-MFG New Footprint=FP-MA02A-MFG
+Change Component Footprint: Designator=C11 Old Footprint=FP-TAJA-MFG New Footprint=FP-TAJA-MFG
+Change Component Comment : Designator=C12 Old Comment=12uF New Comment=22uF
+Change Component Comment : Designator=C16 Old Comment=12uF New Comment=22uF
+Change Component Designator: OldDesignator=R_LED_1 NewDesignator=RDB_1
+Change Component Designator: OldDesignator=R_LED_2 NewDesignator=RDB_2
+Change Component Designator: OldDesignator=R_LED_3 NewDesignator=RDB_3
+Change Component Designator: OldDesignator=R_LED_4 NewDesignator=RDB_4
+Change Component Designator: OldDesignator=R_LED_5 NewDesignator=RDB_5
+Change Component Designator: OldDesignator=R_LED_6 NewDesignator=RDB_6
+Change Component Designator: OldDesignator=R_LED_7 NewDesignator=RDB_7
+Change Component Designator: OldDesignator=R_LED_8 NewDesignator=RDB_8
+Added Component: Designator=R_IR?(RESC2013X50X30NL20T20)
+Add component (AddParameter): Name = "Manufacturer"; Value = "Vishay Dale"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Part Number"; Value = "CRCW080510R0FKEA"; VariantName = "[No Variations]"
+Added Pin To Net: NetName=VDD33 Pin=DS3-1
+Added Pin To Net: NetName=NetQ2_2 Pin=R_IR?-1
+Added Pin To Net: NetName=NetDS2_2 Pin=R_IR?-2
+Added Pin To Net: NetName=L_RV Pin=U1-8
+Added Pin To Net: NetName=R_RV Pin=U1-9
+Added Pin To Net: NetName=LF_RV Pin=U1-10
+Added Pin To Net: NetName=RF_RV Pin=U1-11
+Added Pin To Net: NetName=LF_EM Pin=U1-24
+Added Pin To Net: NetName=LR_EM Pin=U1-25
+Added Pin To Net: NetName=RF_EM Pin=U1-37
+Added Pin To Net: NetName=BUZZER Pin=U1-57
+Change Net Name : Old Net Name=InterrupthMPU New Net Name=IRP MPU
+Added Pin To Net: NetName=DBL_1 Pin=RDB_1-2
+Added Pin To Net: NetName=DBL_1 Pin=U1-61
+Added Net: Name=DBL_1
+Added Pin To Net: NetName=DBL_2 Pin=RDB_2-2
+Added Pin To Net: NetName=DBL_2 Pin=U1-62
+Added Net: Name=DBL_2
+Added Pin To Net: NetName=DBL_3 Pin=RDB_3-2
+Added Pin To Net: NetName=DBL_3 Pin=U1-29
+Added Net: Name=DBL_3
+Added Pin To Net: NetName=DBL_4 Pin=RDB_4-2
+Added Pin To Net: NetName=DBL_4 Pin=U1-30
+Added Net: Name=DBL_4
+Added Pin To Net: NetName=DBL_5 Pin=RDB_5-2
+Added Pin To Net: NetName=DBL_5 Pin=U1-33
+Added Net: Name=DBL_5
+Added Pin To Net: NetName=DBL_6 Pin=RDB_6-2
+Added Pin To Net: NetName=DBL_6 Pin=U1-34
+Added Net: Name=DBL_6
+Added Pin To Net: NetName=DBL_7 Pin=RDB_7-2
+Added Pin To Net: NetName=DBL_7 Pin=U1-35
+Added Net: Name=DBL_7
+Added Pin To Net: NetName=DBL_8 Pin=RDB_8-2
+Added Pin To Net: NetName=DBL_8 Pin=U1-36
+Added Net: Name=DBL_8
+Added Member To Class: ClassName=Sheet1 Member=Component R_IR? 10
+Added Rule: Name=Schematic Supply Nets
+Added Rule: Name=Schematic Supply Nets_1
+Added Rule: Name=Schematic Supply Nets_2
+Added Rule: Name=Schematic Supply Nets_3

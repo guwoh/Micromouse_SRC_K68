@@ -1,0 +1,9 @@
+Removed Pin From Net: NetName=F_EM Pin=Q1-1
+Removed Pin From Net: NetName=LR_EM Pin=Q2-1
+Removed Pin From Net: NetName=F_EM Pin=R_IR1-2
+Removed Pin From Net: NetName=LR_EM Pin=R_IR2-2
+Added Pin To Net: NetName=LR_EM Pin=Q1-1
+Added Pin To Net: NetName=F_EM Pin=Q2-1
+Added Pin To Net: NetName=LR_EM Pin=R_IR1-2
+Added Pin To Net: NetName=F_EM Pin=R_IR2-2
+Added Pin To Net: NetName=F_EM Pin=U?-24

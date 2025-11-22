@@ -1,0 +1,41 @@
+Removed Pin From Net: NetName=SDA_enA Pin=J4_A-01
+Removed Pin From Net: NetName=SCL_enA Pin=J4_A-02
+Removed Pin From Net: NetName=OUT_enA Pin=J4_A-03
+Removed Pin From Net: NetName=SDA_enB Pin=J4_B-01
+Removed Pin From Net: NetName=SCL_enB Pin=J4_B-02
+Removed Pin From Net: NetName=OUT_enB Pin=J4_B-03
+Removed Pin From Net: NetName=OUT_enA Pin=U_enA-3
+Removed Pin From Net: NetName=SDA_enA Pin=U_enA-6
+Removed Pin From Net: NetName=SCL_enA Pin=U_enA-7
+Removed Pin From Net: NetName=OUT_enB Pin=U_enB-3
+Removed Pin From Net: NetName=SDA_enB Pin=U_enB-6
+Removed Pin From Net: NetName=SCL_enB Pin=U_enB-7
+Add component: Footprint Not Found RESC2013X70X40ML20T20
+Add component: Footprint Not Found RESC2013X70X40ML20T20
+Add component: Footprint Not Found RESC2013X70X40ML20T20
+Add component: Footprint Not Found RESC2013X70X40ML20T20
+Add Pin To Net: Unknown Pin: Pin R_SCLA-2
+Add Pin To Net: Unknown Pin: Pin R_SCLB-2
+Add Pin To Net: Unknown Pin: Pin R_SDAA-2
+Add Pin To Net: Unknown Pin: Pin R_SDAB-2
+Added Pin To Net: NetName=OUT_enA Pin=U1-51
+Added Pin To Net: NetName=OUT_enB Pin=U1-52
+Added Pin To Net: NetName=NetLabel80 Pin=U1-56
+Added Pin To Net: NetName=OUT_A Pin=J4_A-03
+Added Pin To Net: NetName=OUT_A Pin=U_enA-3
+Added Net: Name=OUT_A
+Added Pin To Net: NetName=OUT_B Pin=J4_B-03
+Added Pin To Net: NetName=OUT_B Pin=U_enB-3
+Added Net: Name=OUT_B
+Added Pin To Net: NetName=SCL_A Pin=J4_A-02
+Added Pin To Net: NetName=SCL_A Pin=U_enA-7
+Added Net: Name=SCL_A
+Added Pin To Net: NetName=SCL_B Pin=J4_B-02
+Added Pin To Net: NetName=SCL_B Pin=U_enB-7
+Added Net: Name=SCL_B
+Added Pin To Net: NetName=SDA_A Pin=J4_A-01
+Added Pin To Net: NetName=SDA_A Pin=U_enA-6
+Added Net: Name=SDA_A
+Added Pin To Net: NetName=SDA_B Pin=J4_B-01
+Added Pin To Net: NetName=SDA_B Pin=U_enB-6
+Added Net: Name=SDA_B

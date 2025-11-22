@@ -1,0 +1,4 @@
+Removed Pin From Net: NetName=DEBUG Pin=U?-44
+Added Pin To Net: NetName=DEBUG Pin=U?-4
+Added Pin To Net: NetName=NetLabel86 Pin=U?-44
+Added Net: Name=NetLabel86

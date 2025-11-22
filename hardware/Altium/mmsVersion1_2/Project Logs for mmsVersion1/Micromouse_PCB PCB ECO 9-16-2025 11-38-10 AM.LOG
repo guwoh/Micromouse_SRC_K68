@@ -1,0 +1,12 @@
+Removed Pin From Net: NetName=VIN74 Pin=C15-1
+Removed Pin From Net: NetName=VIN74 Pin=U3-1
+Change Component Comment : Designator=C14 Old Comment=4.8nF New Comment=3.9nF
+Change Component Comment : Designator=R5 Old Comment=8.2K New Comment=6.8K
+Change Component Comment : Designator=C12 Old Comment=12uF New Comment=10uF
+Change Component Comment : Designator=C16 Old Comment=12uF New Comment=22uF
+Change Component Comment : Designator=L3 Old Comment=744052006 New Comment=10uH
+Change Component Description : Designator=C14 Old Description=C1206 10 pF C0G 5.00% 50 V New Description=C1206 4.8nF C0G 5.00% 50 V
+Change Component Description : Designator=C12 Old Description=C1206 10 pF C0G 5.00% 50 V New Description=C1206 10 uF C0G 5.00% 50 V
+Added Pin To Net: NetName=NetC15_1 Pin=C15-1
+Added Pin To Net: NetName=NetC15_1 Pin=U3-1
+Added Net: Name=NetC15_1
