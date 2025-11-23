@@ -1,0 +1,11 @@
+../Core/Src/Algorithm.c:39:6:updateMaze	29
+../Core/Src/Algorithm.c:121:5:xyToSquare	1
+../Core/Src/Algorithm.c:125:19:squareToCoord	2
+../Core/Src/Algorithm.c:132:6:resetDistances	4
+../Core/Src/Algorithm.c:19:6:initialize	2
+../Core/Src/Algorithm.c:161:5:isWallInDirection	9
+../Core/Src/Algorithm.c:183:6:updateDistances	13
+../Core/Src/Algorithm.c:222:6:updateHeading	11
+../Core/Src/Algorithm.c:264:6:updatePosition	6
+../Core/Src/Algorithm.c:307:8:floodFill	30
+../Core/Src/Algorithm.c:287:8:solver	5

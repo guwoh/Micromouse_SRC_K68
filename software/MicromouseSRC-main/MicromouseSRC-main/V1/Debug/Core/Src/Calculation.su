@@ -1,0 +1,7 @@
+../Core/Src/Calculation.c:35:6:update_speed	8	static
+../Core/Src/Calculation.c:118:7:mm_to_cnt	8	static
+../Core/Src/Calculation.c:21:6:update_turnspeed	16	static
+../Core/Src/Calculation.c:53:6:calc_extra_cnt	16	static
+../Core/Src/Calculation.c:102:9:check_state	8	static
+../Core/Src/Calculation.c:113:7:cnt_to_omega	8	static
+../Core/Src/Calculation.c:122:7:cnt_to_mm	8	static
