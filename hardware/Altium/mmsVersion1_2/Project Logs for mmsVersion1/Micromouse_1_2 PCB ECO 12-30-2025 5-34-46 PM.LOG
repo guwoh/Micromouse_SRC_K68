@@ -1,0 +1,30 @@
+Added Component: Designator=J1(SAMTEC_TSW-102-07-G-S)
+Add component (AddParameter): Name = "Availability"; Value = "Unavailable"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "MF"; Value = "Samtec"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "MP"; Value = "TSW-102-07-G-S"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Package"; Value = "None"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Price"; Value = "None"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = ""; VariantName = "[No Variations]"
+Added Component: Designator=J2(SAMTEC_TSW-102-07-G-S)
+Add component (AddParameter): Name = "Availability"; Value = "Unavailable"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "MF"; Value = "Samtec"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "MP"; Value = "TSW-102-07-G-S"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Package"; Value = "None"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Price"; Value = "None"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = ""; VariantName = "[No Variations]"
+Add component: Footprint Not Found RESC2013X70X40ML20T20
+Add component: Footprint Not Found RESC2013X70X40ML20T20
+Add component: Footprint Not Found RESC2013X70X40ML20T20
+Add component: Footprint Not Found RESC2013X70X40ML20T20
+Added Pin To Net: NetName=OUT1 Pin=J1-01
+Added Pin To Net: NetName=OUT2 Pin=J1-02
+Added Pin To Net: NetName=OUT3 Pin=J2-01
+Added Pin To Net: NetName=OUT4 Pin=J2-02
+Add Pin To Net: Unknown Pin: Pin LP1-1
+Add Pin To Net: Unknown Pin: Pin LP1-2
+Add Pin To Net: Unknown Pin: Pin LP2-1
+Add Pin To Net: Unknown Pin: Pin LP2-2
+Add Pin To Net: Unknown Pin: Pin LP3-1
+Add Pin To Net: Unknown Pin: Pin LP3-2
+Add Pin To Net: Unknown Pin: Pin LP4-1
+Add Pin To Net: Unknown Pin: Pin LP4-2

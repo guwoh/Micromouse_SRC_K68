@@ -1,0 +1,69 @@
+Add component: Footprint Not Found CAPC0805(2012)145_L
+Add component: Footprint Not Found CAPC0805(2012)145_L
+Add component: Footprint Not Found CAPC0805(2012)145_L
+Add component: Footprint Not Found SAMTEC_TSW-102-07-G-S
+Add component: Footprint Not Found SAMTEC_TSW-102-07-G-S
+Add component: Footprint Not Found RESC2013X70X40ML20T20
+Add component: Footprint Not Found RESC2013X70X40ML20T20
+Add component: Footprint Not Found RESC2013X70X40ML20T20
+Add component: Footprint Not Found RESC2013X70X40ML20T20
+Added Component: Designator=R_DBL1(FP-CRCW0805-e3-IPC_A)
+Add component (AddParameter): Name = "Case/Package"; Value = "0805"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Composition"; Value = "Thick Film"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Contact Plating"; Value = "Tin"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Features"; Value = "Automotive AEC-Q200"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Height"; Value = "0.02inch"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Lead Free"; Value = "Lead Free"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Length"; Value = "0.079inch"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Max Operating Temperature"; Value = "155°C"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Max Power Dissipation"; Value = "125mW"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Min Operating Temperature"; Value = "-55°C"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Number of Terminations"; Value = "2"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Package Quantity"; Value = "20000"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Packaging"; Value = "Tape and Reel"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Radiation Hardening"; Value = "No"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Resistance"; Value = "1kR"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Temperature Coefficient"; Value = "200ppm/°C"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Tolerance"; Value = "5%"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Width"; Value = "0.049inch"; VariantName = "[No Variations]"
+Added Component: Designator=R_DBL2(FP-CRCW0805-e3-IPC_A)
+Add component (AddParameter): Name = "Case/Package"; Value = "0805"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Composition"; Value = "Thick Film"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Contact Plating"; Value = "Tin"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Features"; Value = "Automotive AEC-Q200"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Height"; Value = "0.02inch"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Lead Free"; Value = "Lead Free"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Length"; Value = "0.079inch"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Max Operating Temperature"; Value = "155°C"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Max Power Dissipation"; Value = "125mW"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Min Operating Temperature"; Value = "-55°C"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Number of Terminations"; Value = "2"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Package Quantity"; Value = "20000"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Packaging"; Value = "Tape and Reel"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Radiation Hardening"; Value = "No"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Resistance"; Value = "1kR"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Temperature Coefficient"; Value = "200ppm/°C"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Tolerance"; Value = "5%"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Width"; Value = "0.049inch"; VariantName = "[No Variations]"
+Add Pin To Net: Unknown Pin: Pin C_IR1-1
+Add Pin To Net: Unknown Pin: Pin C_IR1-2
+Add Pin To Net: Unknown Pin: Pin C_IR3-1
+Add Pin To Net: Unknown Pin: Pin C_IR3-2
+Add Pin To Net: Unknown Pin: Pin C_IR6-1
+Add Pin To Net: Unknown Pin: Pin C_IR6-2
+Add Pin To Net: Unknown Pin: Pin J1-01
+Add Pin To Net: Unknown Pin: Pin J1-02
+Add Pin To Net: Unknown Pin: Pin J2-01
+Add Pin To Net: Unknown Pin: Pin J2-02
+Add Pin To Net: Unknown Pin: Pin LP1-1
+Add Pin To Net: Unknown Pin: Pin LP1-2
+Add Pin To Net: Unknown Pin: Pin LP2-1
+Add Pin To Net: Unknown Pin: Pin LP2-2
+Add Pin To Net: Unknown Pin: Pin LP3-1
+Add Pin To Net: Unknown Pin: Pin LP3-2
+Add Pin To Net: Unknown Pin: Pin LP4-1
+Add Pin To Net: Unknown Pin: Pin LP4-2
+Added Pin To Net: NetName=DBL_1 Pin=R_DBL1-1
+Added Pin To Net: NetName=NetD5_2 Pin=R_DBL1-2
+Added Pin To Net: NetName=DBL_2 Pin=R_DBL2-1
+Added Pin To Net: NetName=NetD6_2 Pin=R_DBL2-2
