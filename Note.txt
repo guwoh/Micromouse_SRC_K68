@@ -1,0 +1,5 @@
+- Bỏ cuộn cảm ở MCU
+- Chưa cấp nguồn cho bmg250
+- Xem lại VDDA (hình như VDDA chưa nối với v33 nào)
+- Chỉnh lại một số linh kiện về 0603 hoặc 0805
+- Thay đổi sang thạch anh nhỏ hơn
