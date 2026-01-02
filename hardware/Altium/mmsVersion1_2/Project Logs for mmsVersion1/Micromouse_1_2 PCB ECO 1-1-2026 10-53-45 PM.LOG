@@ -1,0 +1,38 @@
+Removed Pin From Net: NetName=GND Pin=C1-2
+Removed Pin From Net: NetName=GND Pin=C2-2
+Change Component Footprint: Designator=Y1 Old Footprint=FP-ABLS-MFG New Footprint=FP-ABM10W-MFG
+Change Component Footprint: Designator=C1 Old Footprint=FP-CL32-IPC_B New Footprint=CAPC1608X92X38ML15T08
+Change Component Footprint: Designator=C2 Old Footprint=FP-CL32-IPC_B New Footprint=CAPC1608X92X38ML15T08
+Change Component Comment : Designator=Y1 Old Comment=8.000MHZ New Comment=16MHz
+Change Managed Component Library Link : Designator=C1 Old VaultGUID=B7D15EC3-160A-466F-A46C-7801FE6295A7 New VaultGUID=B7D15EC3-160A-466F-A46C-7801FE6295A7 Old ItemGUID=CFBC7707-1FFD-49E3-9CB7-E169C16285EE New ItemGUID=CE9ACEFC-FBEC-489A-8020-B6DE853399F5 Old RevisionGUID=ADB4DD05-DB2F-4CFF-ABFA-0F8894B72C34 New RevisionGUID=FE6DB3D3-8CFC-4B19-A7D7-C9E1B8748926
+Change Managed Component Library Link : Designator=C2 Old VaultGUID=B7D15EC3-160A-466F-A46C-7801FE6295A7 New VaultGUID=B7D15EC3-160A-466F-A46C-7801FE6295A7 Old ItemGUID=CFBC7707-1FFD-49E3-9CB7-E169C16285EE New ItemGUID=CE9ACEFC-FBEC-489A-8020-B6DE853399F5 Old RevisionGUID=ADB4DD05-DB2F-4CFF-ABFA-0F8894B72C34 New RevisionGUID=FE6DB3D3-8CFC-4B19-A7D7-C9E1B8748926
+Change Managed Component Library Link : Designator=Y1 Old VaultGUID=B7D15EC3-160A-466F-A46C-7801FE6295A7 New VaultGUID=B7D15EC3-160A-466F-A46C-7801FE6295A7 Old ItemGUID=8EDD44CD-9F6E-4C02-A7A1-3000236F3555 New ItemGUID=DC463AAC-02B7-494F-87DB-D27C02B0BACF Old RevisionGUID=54AA232D-572E-4D1F-A962-D60A04F50370 New RevisionGUID=A8FD48BF-8598-4B2B-800C-BD58DB849B35
+Change component parameters: Designator = "C1" ("C1"); Footprint = "FP-CL32-IPC_B"; UniqueID = "\UQXGYUWC" ("\UQXGYUWC")
+Change component parameters (AddParameter): Name = "Manufacturer"; Value = "Vitramon"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Part Number"; Value = "VJ0603A220FXBAC"; VariantName = "[No Variations]"
+Change component parameters: Designator = "C2" ("C2"); Footprint = "FP-CL32-IPC_B"; UniqueID = "\WTJVDTFT" ("\WTJVDTFT")
+Change component parameters (AddParameter): Name = "Manufacturer"; Value = "Vitramon"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Part Number"; Value = "VJ0603A220FXBAC"; VariantName = "[No Variations]"
+Change component parameters: Designator = "Y1" ("Y1"); Footprint = "FP-ABLS-MFG"; UniqueID = "\NMIVSIZP" ("\NMIVSIZP")
+Change component parameters (AddParameter): Name = "Case/Package"; Value = "SMD/SMT"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "ESR (Equivalent Series Resistance)"; Value = "100R"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Frequency"; Value = "16MHz"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Frequency Stability"; Value = "10ppm"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Frequency Tolerance"; Value = "10ppm"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Load Capacitance"; Value = "4pF"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Max Operating Temperature"; Value = "70°C"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Min Operating Temperature"; Value = "-20°C"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Mount"; Value = "Surface Mount"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Packaging"; Value = "Tape and Reel"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "RoHS Compliant"; Value = "Yes"; VariantName = "[No Variations]"
+Added Pin To Net: NetName=GND Pin=C1-1
+Added Pin To Net: NetName=GND Pin=C2-1
+Added Pin To Net: NetName=GND Pin=Y1-2
+Added Pin To Net: NetName=GND Pin=Y1-4
+Added Pin To Net: NetName=NetC1_2 Pin=C1-2
+Added Pin To Net: NetName=NetC1_2 Pin=U1-5
+Added Pin To Net: NetName=NetC1_2 Pin=Y1-1
+Added Net: Name=NetC1_2
+Added Pin To Net: NetName=NetC2_2 Pin=C2-2
+Added Pin To Net: NetName=NetC2_2 Pin=Y1-3
+Added Net: Name=NetC2_2
