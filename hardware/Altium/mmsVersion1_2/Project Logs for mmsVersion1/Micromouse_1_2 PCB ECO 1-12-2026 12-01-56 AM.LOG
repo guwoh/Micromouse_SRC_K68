@@ -1,0 +1,30 @@
+Removed Pin From Net: NetName=GND Pin=CLP1-2
+Removed Pin From Net: NetName=GND Pin=CLP2-2
+Removed Pin From Net: NetName=GND Pin=CLP3-2
+Removed Pin From Net: NetName=GND Pin=CLP4-2
+Removed Pin From Net: NetName=RF_RV Pin=LP1-1
+Removed Pin From Net: NetName=R_RV Pin=LP2-1
+Removed Pin From Net: NetName=L_RV Pin=LP3-1
+Removed Pin From Net: NetName=LF_RV Pin=LP4-1
+Change Component Comment : Designator=LP1 Old Comment=1K New Comment=47K
+Change Component Comment : Designator=LP2 Old Comment=1K New Comment=47K
+Change Component Comment : Designator=LP3 Old Comment=1K New Comment=47K
+Change Component Comment : Designator=LP4 Old Comment=1K New Comment=47K
+Change Component Designator: OldDesignator=CLP1 NewDesignator=CHP1
+Change Component Designator: OldDesignator=CLP2 NewDesignator=CHP2
+Change Component Designator: OldDesignator=CLP3 NewDesignator=CHP3
+Change Component Designator: OldDesignator=CLP4 NewDesignator=CHP4
+Change Component Designator: OldDesignator=LP1 NewDesignator=HP1
+Change Component Designator: OldDesignator=LP2 NewDesignator=HP2
+Change Component Designator: OldDesignator=LP3 NewDesignator=HP3
+Change Component Designator: OldDesignator=LP4 NewDesignator=HP4
+Added Pin To Net: NetName=RF Pin=CHP1-1
+Added Pin To Net: NetName=RF_RV Pin=CHP1-2
+Added Pin To Net: NetName=R_RV Pin=CHP2-2
+Added Pin To Net: NetName=L_RV Pin=CHP3-2
+Added Pin To Net: NetName=LF_RV Pin=CHP4-2
+Added Pin To Net: NetName=GND Pin=HP3-1
+Added Pin To Net: NetName=GND Pin=HP4-1
+Added Pin To Net: NetName=NetHP1_1 Pin=HP1-1
+Added Pin To Net: NetName=NetHP1_1 Pin=HP2-1
+Added Net: Name=NetHP1_1

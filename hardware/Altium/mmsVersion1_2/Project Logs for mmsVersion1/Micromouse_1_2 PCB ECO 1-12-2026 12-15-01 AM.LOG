@@ -1,0 +1,12 @@
+Removed Pin From Net: NetName=VDD33 Pin=C10-1
+Removed Pin From Net: NetName=VDD33 Pin=C22-2
+Removed Pin From Net: NetName=VDD33 Pin=U1-13
+Added Component: Designator=FB1(FP-BLM21-0_2-t0_85-e0_5-IPC_C)
+Add component (AddParameter): Name = "RoHS Compliant"; Value = "No"; VariantName = "[No Variations]"
+Added Pin To Net: NetName=VDD33 Pin=FB1-1
+Added Pin To Net: NetName=VDDA Pin=C10-1
+Added Pin To Net: NetName=VDDA Pin=C22-2
+Added Pin To Net: NetName=VDDA Pin=FB1-2
+Added Pin To Net: NetName=VDDA Pin=U1-13
+Added Net: Name=VDDA
+Added Rule: Name=Schematic Supply Nets_5
