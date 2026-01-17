@@ -1,0 +1,2 @@
+Removed Pin From Net: NetName=RF_EM Pin=U1-45
+Added Pin To Net: NetName=RF_EM Pin=U1-33
