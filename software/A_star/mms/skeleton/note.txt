@@ -1,0 +1,15 @@
+Ký tự	Màu
+'k'	    Black (đen)
+'b'	    Blue (xanh dương)
+'a'	    Gray (xám)
+'c'	    Cyan (xanh lam)
+'g'	    Green (xanh lá)
+'o'	    Orange (cam)
+'r'	    Red (đỏ)
+'w'	    White (trắng)
+'y'	    Yellow (vàng)
+'B'	    Dark Blue
+'C'	    Dark Cyan
+'G'	    Dark Green
+'R'	    Dark Red
+'Y'	    Dark Yellow
