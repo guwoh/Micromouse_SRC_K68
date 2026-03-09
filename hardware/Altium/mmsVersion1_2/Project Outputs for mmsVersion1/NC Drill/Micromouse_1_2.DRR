@@ -1,0 +1,26 @@
+----------------------------------------------------------------------------------------------------------------------------------
+NCDrill File Report For: Micromouse_1_2.PcbDoc   1/22/2026  9:18:39 AM
+----------------------------------------------------------------------------------------------------------------------------------
+
+Layer Pair : Top Layer to Bottom Layer
+ASCII RoundHoles File : Micromouse_1_2.TXT
+
+Tool       Hole Size               Hole Tolerance               Hole Type       Hole Count   Plated         Tool Travel
+----------------------------------------------------------------------------------------------------------------------------------
+T1      0.3mm (12mil)                                             Round             147       PTH        625.36mm (24.62inch)
+T2      0.4mm (16mil)                                             Round             18        PTH        214.89mm (8.46inch)
+T3      0.45mm (18mil)                                            Round             1         PTH        0.00mm (0.00inch)
+T4      0.6mm (24mil)                                             Round             3         PTH        66.50mm (2.62inch)
+T5      0.7mm (28mil)                                             Round             19        PTH        251.64mm (9.91inch)
+T6      0.75mm (30mil)                                            Round             2         PTH        7.60mm (0.30inch)
+T7      0.8mm (31mil)                                             Round             1         PTH        0.00mm (0.00inch)
+T8      1mm (39mil)                                               Round             3         PTH        5.00mm (0.20inch)
+T9      1.02mm (40mil)                                            Round             38        PTH        289.28mm (11.39inch)
+T10     1.1mm (43mil)                                             Round             6         PTH        83.23mm (3.28inch)
+T11     1.4mm (55mil)                                             Round             1         PTH        0.00mm (0.00inch)
+T12     1.5mm (59mil)                                             Round             3         PTH        40.88mm (1.61inch)
+T13     2mm (79mil)                                               Round             12        PTH        176.61mm (6.95inch)
+----------------------------------------------------------------------------------------------------------------------------------
+Totals                                                                              254
+
+Total Processing Time (hh:mm:ss) : 00:00:00

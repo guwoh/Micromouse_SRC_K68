@@ -1,0 +1,12 @@
+../Core/Src/algorithm.c:19:6:initialize	16	static
+../Core/Src/algorithm.c:39:6:updateMaze	24	static
+../Core/Src/algorithm.c:120:5:xyToSquare	16	static
+../Core/Src/algorithm.c:124:19:squareToCoord	24	static
+../Core/Src/algorithm.c:131:6:resetDistances	16	static
+../Core/Src/algorithm.c:160:5:isWallInDirection	24	static
+../Core/Src/algorithm.c:182:6:updateDistances	40	static
+../Core/Src/algorithm.c:221:6:updateHeading	16	static
+../Core/Src/algorithm.c:263:6:updatePosition	16	static
+../Core/Src/algorithm.c:286:8:solver	16	static
+../Core/Src/algorithm.c:306:8:floodFill	16	static
+../Core/Src/algorithm.c:375:8:leftWallFollower	4	static

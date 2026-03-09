@@ -1,3 +1,0 @@
-../Core/Src/PID.c:22:6:PID_init	1
-../Core/Src/PID.c:30:7:PID_calc	1
-../Core/Src/PID.c:46:6:PID_reset	1

@@ -1,6 +1,0 @@
-../Core/Src/Encoder.c:31:6:Encoder_Init	1
-../Core/Src/Encoder.c:36:6:reset_encoder	1
-../Core/Src/Encoder.c:58:7:left_pulse_per_sec	1
-../Core/Src/Encoder.c:42:6:read_en_left	1
-../Core/Src/Encoder.c:63:7:right_pulse_per_sec	1
-../Core/Src/Encoder.c:50:6:read_en_right	1

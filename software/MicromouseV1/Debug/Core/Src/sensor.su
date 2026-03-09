@@ -1,0 +1,5 @@
+../Core/Src/sensor.c:33:6:init_sensor	16	static
+../Core/Src/sensor.c:45:6:read_sensor	24	static
+../Core/Src/sensor.c:84:6:wall_detect	4	static
+../Core/Src/sensor.c:96:6:wall_front_detect	4	static
+../Core/Src/sensor.c:108:9:sensorError	8	static

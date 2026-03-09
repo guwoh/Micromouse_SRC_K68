@@ -1,0 +1,13 @@
+../Core/Src/function_c.c:12:7:queue_create	1
+../Core/Src/function_c.c:23:6:queue_destroy	1
+../Core/Src/function_c.c:31:6:queue_push	2
+../Core/Src/function_c.c:48:5:queue_pop	2
+../Core/Src/function_c.c:65:5:queue_first	1
+../Core/Src/function_c.c:72:5:queue_is_empty	1
+../Core/Src/function_c.c:79:5:queue_size	1
+../Core/Src/function_c.c:86:6:queue_clear	2
+../Core/Src/function_c.c:99:6:initVector	1
+../Core/Src/function_c.c:106:6:resizeVector	1
+../Core/Src/function_c.c:111:6:pushBack	2
+../Core/Src/function_c.c:118:5:get	1
+../Core/Src/function_c.c:125:6:freeVector	1
