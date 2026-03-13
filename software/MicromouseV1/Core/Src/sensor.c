@@ -19,16 +19,24 @@ int16_t LSensor_raw;
 
 uint16_t RThreshold  = 700;
 uint16_t LThreshold = 700;
-uint16_t RFThreshold1 = 2530;
-uint16_t LFThreshold1 = 1540;
-uint16_t RFThreshold2 = 1300;
-uint16_t LFThreshold2 = 600;
+uint16_t RFThreshold1 = 3180;
+uint16_t LFThreshold1 = 1400;
+uint16_t RFThreshold2 = 600;
+uint16_t LFThreshold2 = 300;
 float gainSensor;
 
 uint8_t wall_R_Check = 0;
 uint8_t wall_L_Check = 0;
 uint8_t wall_RF_Check = 0;
 uint8_t wall_LF_Check = 0;
+
+volatile uint8_t wall_R_Check2 = 1;
+volatile uint8_t wall_L_Check2 = 1;
+volatile uint8_t wall_RF_Check2 = 0;
+volatile uint8_t wall_LF_Check2 = 0;
+
+float wall_L_sum = 0;
+float wall_R_sum = 0;
 
 void init_sensor(ADC_HandleTypeDef *hadc) {
 	LF_EM_OFF;
@@ -82,27 +90,44 @@ void read_sensor(ADC_HandleTypeDef *hadc) {
 }
 
 void wall_detect() {
-	if (RSensor > (RThreshold - 400))
+	if (RSensor > (RThreshold - 500)) {
 		wall_R_Check = 1;
-	else
+	}
+	else{
 		wall_R_Check = 0;
 
-	if (LSensor > (LThreshold - 400))
+	}
+
+	if (LSensor > (LThreshold - 500)) {
 		wall_L_Check = 1;
-	else
+
+	}
+	else{
 		wall_L_Check = 0;
+
+	}
 }
 
 void wall_front_detect() {
-	if (RFSensor > RFThreshold2) {
+	if (RFSensor > RFThreshold2 - 100) {
 		wall_RF_Check = 1;
+
 	}
-	else
+	else {
 		wall_RF_Check = 0;
-	if (LFSensor > LFThreshold2)
+
+
+	}
+	if (LFSensor > LFThreshold2) {
+
 		wall_LF_Check = 1;
-	else
+
+	}
+	else {
+
 		wall_LF_Check = 0;
+
+	}
 }
 
 int16_t sensorError() {
@@ -118,4 +143,37 @@ int16_t sensorError() {
 	}
 	else
 		return 0;
+}
+
+void wall_detect2() {
+	if (RFSensor > (RFThreshold2 - 50)) {
+		wall_RF_Check2 = 1;
+	}
+	else {
+		wall_RF_Check2 = 0;
+	}
+
+	if (LFSensor > (LFThreshold2 - 50)) {
+		wall_LF_Check2 = 1;
+	}
+	else {
+		wall_LF_Check2 = 0;
+	}
+	if (RSensor > (RThreshold - 400)) {
+		wall_R_Check2 = 1;
+		R_LED_ON;
+	}
+	else{
+		R_LED_OFF;
+		wall_R_Check2 = 0;
+
+	}
+	if (LSensor > (LThreshold - 500)) {
+		wall_L_Check2 = 1;
+		L_LED_ON;
+	}
+	else{
+		L_LED_OFF;
+		wall_L_Check2 = 0;
+	}
 }

@@ -17,8 +17,8 @@ int32_t targetSpeedX = 0;
 float targetSpeedW = 0;
 float curSpeedX = 0;
 float curSpeedW = 0;
-int accX = 1600; // mm\s\s
-int decX = 1600;
+int accX = 600; // mm\s\s
+int decX = 600;
 int accX_Turn = 800;
 int decX_Turn = 800;
 int accW = 10; //mm\s\s
@@ -35,8 +35,8 @@ float oldPosErrorW = 0;
 int32_t posPwmX = 0;
 int32_t posPwmW = 0;
 
-int moveSpeedX = 600;
-int stopSpeedX = 80;
+int moveSpeedX = 400;
+int stopSpeedX = 100;
 int moveSpeedX_Turn = 200;
 int stopSpeedX_Turn = 40;
 
@@ -47,8 +47,14 @@ uint8_t turnRightFlag = 0;
 uint8_t sensorFlag = 0;
 uint8_t gyroFlag = 0;
 
-uint8_t sensorScale = 50;
+uint8_t sensorScale = 80;
 uint8_t gyroScale;
+float oldSensorFeedback = 0;
+float kdSensor = 1;
+float kpSensor = 0.05;
+
+float integralTurnL = 0;
+float integralTurnR = 0;
 
 float debug1;
 /*-------------------------------------------------------------*/
@@ -67,6 +73,8 @@ void initController() {
 }
 
 void resetEverything() {
+	integralTurnL = 0;
+	integralTurnR = 0;
 	encoderAccumulate = 0;
 	encoderFeedbackX = 0;
 	encoderFeedbackW = 0;
@@ -184,8 +192,10 @@ void calculate_motor_pwm(void) {
 		encoderFeedbackW = encoderChangeRight + encoderChangeLeft;
 	}
 	encoderAccumulate += (float) encoderFeedbackW  * 0.1;
-	sensorFeedback = sensorError() / sensorScale;
-	debug1 = sensorFeedback;
+	  int rawSensorError = sensorError();
+	  sensorFeedback = kpSensor * rawSensorError +
+	                   kdSensor * (rawSensorError - oldSensorFeedback);
+	  oldSensorFeedback = rawSensorError;
 	if (sensorFlag)
 		rotationalFeedback = encoderFeedbackW - sensorFeedback;
 	else if (gyroFlag)
@@ -225,8 +235,8 @@ void calculate_motor_pwm(void) {
 		set_mright(rightBaseSpeed);
 	}
 	else if (turnLeftFlag) {
-		rightBaseSpeed += 275;
-		leftBaseSpeed += 275;
+		rightBaseSpeed += 280;
+		leftBaseSpeed += 280;
 		if (abs(encoderAccumulate) > 1) {
 			rightBaseSpeed += 30 * encoderAccumulate;
 			encoderAccumulate = 0;
@@ -234,14 +244,14 @@ void calculate_motor_pwm(void) {
 		set_mleft(-leftBaseSpeed);
 		set_mright(rightBaseSpeed);
 	} else if (turnRightFlag) {
-		rightBaseSpeed += 265;
-		leftBaseSpeed += 275;
+		rightBaseSpeed += 270;
+		leftBaseSpeed += 280;
 		if (abs(encoderAccumulate) > 1) {
 			rightBaseSpeed += 10 * encoderAccumulate;
 			encoderAccumulate = 0;
 		}
-		set_mleft(leftBaseSpeed);
-		set_mright(-rightBaseSpeed);
+//		set_mleft(leftBaseSpeed);
+//		set_mright(-rightBaseSpeed);
 	}
 }
 
@@ -254,7 +264,6 @@ float need_to_decelerate(int32_t dist, int16_t curSpd, int16_t endSpd) {
 		dist = 1;
 	if (dist == 0)
 		dist = 1;
-
 	return (fabs((float) ((curSpd * curSpd - endSpd * endSpd) * 2 * 100) / (dist * 2.0f)));
 }
 
@@ -279,13 +288,30 @@ void move_one_cell(ADC_HandleTypeDef *hadc1, I2C_HandleTypeDef *hi2c2, I2C_Handl
 		if (controlFlag) {
 			controlFlag = 0;
 			get_encoder_status();
-			read_sensor(hadc1);
+//			read_sensor(hadc1);
 			speed_profile();
 			read_enc(hi2c2, hi2c3);
+			if (encoderCount > (oneCellDistance + 3000) && encoderCount < (oneCellDistance + 9000)) {
+				wall_detect2();
+//				wall_L_sum += wall_L_Check2;
+//				wall_R_sum += wall_R_Check2;
+			}
+
 		}
 	} while ((encoderCount - oldEncoderCount) < (oneCellDistance * 2) && (LFSensor < LFThreshold1)
 			&& (RFSensor < RFThreshold1));
 	oldEncoderCount = encoderCount;
+//	wall_L_sum /= (Millis - curt);
+//	wall_R_sum /= (Millis - curt);
+//	if (wall_L_sum > 0.6)
+//		wall_L_Check2 = 1;
+//	else
+//		wall_L_Check2 = 0;
+//	if (wall_R_sum > 0.6)
+//		wall_R_Check2 = 1;
+//	else
+//		wall_R_Check2 = 0;
+
 
 }
 
@@ -345,20 +371,19 @@ void turn_left(I2C_HandleTypeDef *hi2c2, I2C_HandleTypeDef *hi2c3) {
 
 void wall_front_adjust(ADC_HandleTypeDef *hadc1) {
 	uint32_t curt = Millis;
-	uint32_t time = 500;
-	if (LFThreshold1 - LFSensor > 200) {
-		time = time * 3;
-	}
+	uint32_t time = 300;
+	if (RFSensor < RFThreshold1 - 200)
+		time = time * 2;
 	while (Millis - curt < time) {
 		if (controlFlag) {
 			controlFlag = 0;
 			read_sensor(hadc1);
-			int16_t pwmLeft = (LFThreshold1 - LFSensor);
-			int16_t pwmRight = (RFThreshold1 - RFSensor);
-			if (pwmLeft > 450) pwmLeft = 450;
-			else if(pwmLeft < -450) pwmLeft = -450;
-			if (pwmRight > 450) pwmRight = 450;
-			else if(pwmRight < -450) pwmRight = -450;
+			int16_t pwmLeft = (LFThreshold1 - LFSensor) * 0.6;
+			int16_t pwmRight = (RFThreshold1 - RFSensor) * 0.4;
+			if (pwmLeft > 350) pwmLeft = 0;
+			else if(pwmLeft < -350) pwmLeft = 0;
+			if (pwmRight > 350) pwmRight = 0;
+			else if(pwmRight < -350) pwmRight = 0;
 			set_mleft(pwmLeft);
 			set_mright(pwmRight);
 		}
@@ -380,10 +405,12 @@ void turn_90left(I2C_HandleTypeDef *hi2c2, I2C_HandleTypeDef *hi2c3) {
 			controlFlag = 0;
 			errorL = turnDistance + enc_cnt_left;
 			errorR = turnDistance - enc_cnt_right;
-			leftPwm = 0.054 * errorL + 10 * (errorL - oldErrorL);
-			rightPwm = 0.054 * errorR + 10 * (errorR - oldErrorR);
-			leftPwm += 225;
-			rightPwm += 225;
+			integralTurnL += errorL;
+			integralTurnR += errorR;
+			leftPwm = 0.054 * errorL + 10 * (errorL - oldErrorL) + 0.00016 * integralTurnL;
+			rightPwm = 0.054 * errorR + 10 * (errorR - oldErrorR) + 0.00016 * integralTurnR;
+			leftPwm += 275;
+			rightPwm += 275;
 			if (leftPwm > 1000) leftPwm = 1000;
 			if (rightPwm > 1000) rightPwm = 1000;
 			set_mleft(-leftPwm);
@@ -411,10 +438,12 @@ void turn_90right(I2C_HandleTypeDef *hi2c2, I2C_HandleTypeDef *hi2c3) {
 			controlFlag = 0;
 			errorL = turnDistance - enc_cnt_left;
 			errorR = turnDistance + enc_cnt_right;
-			leftPwm = 0.054 * errorL + 10 * (errorL - oldErrorL);
-			rightPwm = 0.05 * errorR + 10 * (errorR - oldErrorR);
-			leftPwm += 220;
-			rightPwm += 210;
+			integralTurnL += errorL;
+			integralTurnR += errorR;
+			leftPwm = 0.054 * errorL + 10 * (errorL - oldErrorL) + 0.00016 * integralTurnL;
+			rightPwm = 0.054 * errorR + 10 * (errorR - oldErrorR) + 0.00016 * integralTurnR;
+			leftPwm += 275;
+			rightPwm += 265;
 			if (leftPwm > 1000) leftPwm = 1000;
 			if (rightPwm > 1000) rightPwm = 1000;
 			set_mleft(leftPwm);
@@ -425,6 +454,36 @@ void turn_90right(I2C_HandleTypeDef *hi2c2, I2C_HandleTypeDef *hi2c3) {
 
 		}
 	} while (enc_cnt_left < (turnDistance-400) || -enc_cnt_right < (turnDistance-400));
+	set_mleft(0);
+	set_mright(0);
+}
+void turn_180(I2C_HandleTypeDef *hi2c2, I2C_HandleTypeDef *hi2c3) {
+	resetEverything();
+	int16_t errorL;
+	int16_t oldErrorL = 0;
+	int16_t errorR;
+	int16_t oldErrorR = 0;
+	int16_t leftPwm;
+	int16_t rightPwm;
+	do {
+		if (controlFlag) {
+			controlFlag = 0;
+			errorL = turnDistance + enc_cnt_left;
+			errorR = turnDistance - enc_cnt_right;
+			leftPwm = 0.054 * errorL + 10 * (errorL - oldErrorL);
+			rightPwm = 0.054 * errorR + 10 * (errorR - oldErrorR);
+			leftPwm += 270;
+			rightPwm += 270;
+			if (leftPwm > 1000) leftPwm = 1000;
+			if (rightPwm > 1000) rightPwm = 1000;
+			set_mleft(-leftPwm);
+			set_mright(rightPwm);
+			read_enc(hi2c2, hi2c3);
+			oldErrorL = errorL;
+			oldErrorR = errorR;
+
+		}
+	} while (-enc_cnt_left < turnDistance * 2 || enc_cnt_right < turnDistance * 2);
 	set_mleft(0);
 	set_mright(0);
 }

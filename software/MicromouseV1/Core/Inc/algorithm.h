@@ -11,7 +11,7 @@
 #include "main.h"
 
 typedef enum Heading {NORTH, EAST, SOUTH, WEST} Heading;
-typedef enum Action {LEFT, FORWARD, RIGHT, IDLE} Action;
+typedef enum Action {LEFT, FORWARD, RIGHT, IDLE, BACK} Action;
 
 
 #define MAZE_SIZE 16
@@ -40,6 +40,7 @@ struct Coordinate {
     int x;
     int y;
 };
+extern struct Coordinate position;
 
 void initialize();
 void updateMaze();
@@ -53,5 +54,6 @@ void updatePosition(Action nextAction);
 Action solver();
 Action leftWallFollower();
 Action floodFill();
+Action peekNextAction();
 
 #endif /* INC_ALGORITHM_H_ */

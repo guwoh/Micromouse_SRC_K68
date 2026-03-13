@@ -140,22 +140,77 @@ int main(void) {
 	resetEverything();
 	init();
 	start(&hadc1);
-	L_LED_ON;
+	L_LED_ON
+	;
 	delay_ms(1200);
-	L_LED_OFF;
-	distanceLeft = oneCellDistance * 8;
-	for (int i = 0; i < 8; i++) {
-		move_one_cell(&hadc1, &hi2c2, &hi2c3);
-	}
-	set_mleft(0);
-	set_mright(0);
+	L_LED_OFF
+	;
+//	uint32_t curt = Millis;
+//	while (Millis - curt < 100000) {
+//		if (controlFlag) {
+//			controlFlag = 0;
+////			read_sensor(&hadc1);
+//			printf("%f          %f\n", LFSensor, RFSensor);
+//		}
+//	}
+//	printf("%f\n%f\n", RSensor, LSensor);
 	/* USER CODE END 2 */
 
 	/* Infinite loop */
 	/* USER CODE BEGIN WHILE */
 
 	while (1) {
+//		printf("{\"x\":%d,\"y\":%d,\"w\":%d}\r\n", position.x, position.y, maze[position.x][position.y]);
+//		read_sensor(&hadc1);
+//		wall_front_detect();
+		uint8_t action = solver();
+		wall_R_Check2 = 0;
+		wall_L_Check2 = 0;
+		if (action == FORWARD) {
+			delay_ms(100);
+			resetEverything();
+			distanceLeft = oneCellDistance;
+			move_one_cell(&hadc1, &hi2c2, &hi2c3);
+		} else if (action == RIGHT) {
+			if ((LFSensor < LFThreshold2) || (RFSensor < RFThreshold2))
+				wall_L_Check2 = 0;
+			wall_R_Check2 = 0;
 
+			if ((LFSensor > LFThreshold2) && (RFSensor > RFThreshold2)) {
+				wall_L_Check2 = 1;
+				delay_ms(100);
+				wall_front_adjust(&hadc1);
+			}
+			delay_ms(200);
+			resetEverything();
+			distanceLeft = turnDistance;
+			turn_90right(&hi2c2, &hi2c3);
+		} else if (action == LEFT) {
+			wall_L_Check2 = 0;
+			if ((LFSensor < LFThreshold2) || (RFSensor < RFThreshold2))
+				wall_R_Check2 = 0;
+			if ((LFSensor > LFThreshold2) && (RFSensor > RFThreshold2)) {
+				wall_R_Check2 = 1;
+				delay_ms(100);
+				wall_front_adjust(&hadc1);
+			}
+			delay_ms(200);
+			resetEverything();
+			distanceLeft = turnDistance;
+			turn_90left(&hi2c2, &hi2c3);
+		}
+//		} else if (action == BACK) {
+//			if ((LFSensor > LFThreshold2) && (RFSensor > RFThreshold2)) {
+//				delay_ms(200);
+//				wall_front_adjust(&hadc1);
+//			}
+//			delay_ms(200);
+//			distanceLeft = turnDistance;
+//			turn_180(&hi2c2, &hi2c3);
+//		}
+
+		set_mleft(0);
+		set_mright(0);
 		/* USER CODE END WHILE */
 
 		/* USER CODE BEGIN 3 */
@@ -574,6 +629,7 @@ void HAL_I2C_MemRxCpltCallback(I2C_HandleTypeDef *hi2c) {
 }
 void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim) {
 	if (htim->Instance == TIM3) {
+		read_sensor(&hadc1);
 		controlFlag = 1;
 	}
 

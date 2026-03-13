@@ -9,7 +9,8 @@
 #include "main.h"
 
 int32_t oneCellDistance = 29335;
-int32_t turnDistance = 10500;
+int32_t turnDistance = 10800;
+//int32_t turnDistance = 12000;
 
 volatile uint8_t i2c_busy_left = 0;
 volatile uint8_t i2c_error_left = 0;

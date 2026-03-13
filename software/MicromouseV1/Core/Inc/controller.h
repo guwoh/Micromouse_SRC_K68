@@ -49,6 +49,9 @@ extern uint8_t gyroFlag;
 
 extern uint8_t sensorScale;
 extern uint8_t gyroScale;
+extern float oldSensorFeedback;
+extern float kpSensor;
+extern float kdSensor;
 
 extern float debug1;
 /*----------------------------------------------------------------------*/
@@ -69,4 +72,5 @@ void turn_left(I2C_HandleTypeDef *hi2c2, I2C_HandleTypeDef *hi2c3);
 void wall_front_adjust();
 void turn_90left(I2C_HandleTypeDef *hi2c2, I2C_HandleTypeDef *hi2c3);
 void turn_90right(I2C_HandleTypeDef *hi2c2, I2C_HandleTypeDef *hi2c3);
+void turn_180(I2C_HandleTypeDef *hi2c2, I2C_HandleTypeDef *hi2c3);
 #endif /* INC_CONTROLLER_H_ */

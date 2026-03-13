@@ -37,84 +37,90 @@ void initialize() {
 
 
 void updateMaze() {
-    int x = position.x;
-    int y = position.y;
+  int x = position.x;
+  int y = position.y;
 
-    uint8_t walls = _0000;
-    switch (heading) {
-        case NORTH:
-            if (wall_LF_Check && wall_RF_Check) {
-                walls |= _1000;
-
-                if (y + 1 != MAZE_SIZE)
-                    maze[x][y + 1] |= _0010;
-            }
-            if (wall_L_Check) {
-                walls |= _0001;
-                if (x - 1 >= 0)
-                    maze[x - 1][y] |= _0100;
-            }
-            if (wall_R_Check) {
-                walls |= _0100;
-                if (x + 1 != MAZE_SIZE)
-                    maze[x + 1][y] |= _0001;
-            }
-            break;
-        case EAST:
-            if (wall_LF_Check && wall_RF_Check) {
-                walls |= _0100;
-                if (x + 1 != MAZE_SIZE)
-                    maze[x + 1][y] |= _0001;
-            }
-            if (wall_L_Check) {
-                walls |= _1000;
-                if (y + 1 != MAZE_SIZE)
-                    maze[x][y + 1] |= _0010;
-            }
-            if (wall_R_Check) {
-                walls |= _0010;
-                if (y - 1 >= 0)
-                    maze[x][y - 1] |= _1000;
-            }
-            break;
-        case SOUTH:
-            if (wall_LF_Check && wall_RF_Check) {
-                walls |= _0010;
-                if (y - 1 >= 0)
-                    maze[x][y - 1] |= _1000;
-            }
-            if (wall_L_Check) {
-                walls |= _0100;
-                if (x + 1 != MAZE_SIZE)
-                    maze[x + 1][y] |= _0001;
-            }
-            if (wall_R_Check) {
-                walls |= _0001;
-                if (x - 1 >= 0)
-                    maze[x - 1][y] |= _0100;
-            }
-            break;
-        case WEST:
-            if (wall_LF_Check && wall_RF_Check) {
-                walls |= _0001;
-                if (x - 1 >= 0)
-                    maze[x - 1][y] |= _0100;
-            }
-            if (wall_L_Check) {
-                walls |= _0010;
-                if (y - 1 >= 0)
-                    maze[x][y - 1] |= _1000;
-            }
-            if (wall_R_Check) {
-                walls |= _1000;
-                if (y + 1 != MAZE_SIZE)
-                    maze[x][y + 1] |= _0010;
-            }
-            break;
+  uint8_t walls = _0000;
+  switch (heading) {
+  case NORTH:
+    if ((LFSensor > LFThreshold2) && (RFSensor > RFThreshold2)) {
+      walls |= _1000;
+      if (y + 1 != MAZE_SIZE)
+        maze[x][y + 1] |= _0010;
     }
+//    if ((LSensor > (LThreshold - 300))) {
+    if (wall_L_Check2) {
+      walls |= _0001;
+      if (x - 1 >= 0)
+        maze[x - 1][y] |= _0100;
+    }
+//    if ((RSensor > (RThreshold - 400))) {
+    if (wall_R_Check2) {
+      walls |= _0100;
+      if (x + 1 != MAZE_SIZE)
+        maze[x + 1][y] |= _0001;
+    }
+    break;
+  case EAST:
+    if ((LFSensor > LFThreshold2) && (RFSensor > RFThreshold2)) {
+      walls |= _0100;
+      if (x + 1 != MAZE_SIZE)
+        maze[x + 1][y] |= _0001;
+    }
+//    if ((LSensor > (LThreshold - 300))) {
+    if (wall_L_Check2) {
+      walls |= _1000;
+      if (y + 1 != MAZE_SIZE)
+        maze[x][y + 1] |= _0010;
+    }
+//    if ((RSensor > (RThreshold - 400))) {
+    if (wall_R_Check2) {
+      walls |= _0010;
+      if (y - 1 >= 0)
+        maze[x][y - 1] |= _1000;
+    }
+    break;
+  case SOUTH:
+    if ((LFSensor > LFThreshold2) && (RFSensor > RFThreshold2)) {
+      walls |= _0010;
+      if (y - 1 >= 0)
+        maze[x][y - 1] |= _1000;
+    }
+//    if ((LSensor > (LThreshold - 300))) {
+    if (wall_L_Check2) {
+      walls |= _0100;
+      if (x + 1 != MAZE_SIZE)
+        maze[x + 1][y] |= _0001;
+    }
+//    if ((RSensor > (RThreshold - 400))) {
+    if (wall_R_Check2) {
+      walls |= _0001;
+      if (x - 1 >= 0)
+        maze[x - 1][y] |= _0100;
+    }
+    break;
+  case WEST:
+    if ((LFSensor > LFThreshold2) && (RFSensor > RFThreshold2)) {
+      walls |= _0001;
+      if (x - 1 >= 0)
+        maze[x - 1][y] |= _0100;
+    }
+//    if ((LSensor > (LThreshold - 300))) {
+    if (wall_L_Check2) {
+      walls |= _0010;
+      if (y - 1 >= 0)
+        maze[x][y - 1] |= _1000;
+    }
+//    if ((RSensor > (RThreshold - 400))) {
+    if (wall_R_Check2) {
+      walls |= _1000;
+      if (y + 1 != MAZE_SIZE)
+        maze[x][y + 1] |= _0010;
+    }
+    break;
+  }
 
-    maze[x][y] |= walls;
-
+  maze[x][y] |= walls;
 }
 
 int xyToSquare(int x, int y) {
@@ -136,18 +142,18 @@ void resetDistances() {
     }
 
     if (!reached_center) {
-        // if (MAZE_SIZE % 2 == 0) {
-        //     distances[MAZE_SIZE/2][MAZE_SIZE/2] = 0;
-        //     distances[MAZE_SIZE/2 - 1][MAZE_SIZE/2] = 0;
-        //     distances[MAZE_SIZE/2][MAZE_SIZE/2 - 1] = 0;
-        //     distances[MAZE_SIZE/2 - 1][MAZE_SIZE/2 - 1] = 0;
-        // }
-        if (MAZE_SIZE % 2 == 0) {
-            distances[destination_X][destination_Y] = 0;
-            distances[destination_X-1][destination_Y] = 0;
-            distances[destination_X][destination_Y-1] = 0;
-            distances[destination_X-1][destination_Y-1] = 0;
-        }
+         if (MAZE_SIZE % 2 == 0) {
+             distances[MAZE_SIZE/2][MAZE_SIZE/2] = 0;
+             distances[MAZE_SIZE/2 - 1][MAZE_SIZE/2] = 0;
+             distances[MAZE_SIZE/2][MAZE_SIZE/2 - 1] = 0;
+             distances[MAZE_SIZE/2 - 1][MAZE_SIZE/2 - 1] = 0;
+         }
+//        if (MAZE_SIZE % 2 == 0) {
+//            distances[destination_X][destination_Y] = 0;
+//            distances[destination_X-1][destination_Y] = 0;
+//            distances[destination_X][destination_Y-1] = 0;
+//            distances[destination_X-1][destination_Y-1] = 0;
+//        }
         else {
             distances[MAZE_SIZE/2][MAZE_SIZE/2] = 0;
         }
@@ -306,7 +312,6 @@ Action solver() {
 Action floodFill() {
     uint16_t least_distance = 300;
     Action optimal_move = IDLE;
-
     if (heading == NORTH) {
         if (!isWallInDirection(position.x, position.y, NORTH) && distances[position.x][position.y + 1] < least_distance) {
             least_distance = distances[position.x][position.y + 1];
@@ -363,13 +368,19 @@ Action floodFill() {
             optimal_move = LEFT;
         }
     }
-
+//
+//    if (isWallInDirection(position.x, position.y, NORTH) && isWallInDirection(position.x, position.y, EAST) && isWallInDirection(position.x, position.y, WEST)) {
+//    	least_distance = distances[position.x][position.y];
+//    	optimal_move = BACK;
+//
+//    }
 
     if (least_distance == 300)
         optimal_move = RIGHT;
 
     return optimal_move;
 }
+
 
 
 Action leftWallFollower() {

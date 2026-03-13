@@ -37,10 +37,18 @@ extern uint8_t wall_L_Check;
 extern uint8_t wall_RF_Check;
 extern uint8_t wall_LF_Check;
 
+extern volatile uint8_t wall_R_Check2;
+extern volatile uint8_t wall_L_Check2;
+extern volatile uint8_t wall_RF_Check2;
+extern volatile uint8_t wall_LF_Check2;
+
+extern float wall_L_sum;
+extern float wall_R_sum;
 
 void read_sensor(ADC_HandleTypeDef *hadc);
 void init_sensor(ADC_HandleTypeDef *hadc);
 void wall_detect();
 void wall_front_detect();
+void wall_detect2();
 int16_t sensorError();
 #endif /* INC_SENSOR_H_ */

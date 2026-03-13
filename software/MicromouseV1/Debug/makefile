@@ -61,7 +61,7 @@ main-build: MicromouseV1.elf secondary-outputs
 
 # Tool invocations
 MicromouseV1.elf MicromouseV1.map: $(OBJS) $(USER_OBJS) S:\MicromouseSRC-K68\software\MicromouseV1\STM32F405RGTX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
-	arm-none-eabi-gcc -o "MicromouseV1.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m4 -T"S:\MicromouseSRC-K68\software\MicromouseV1\STM32F405RGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="MicromouseV1.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+	arm-none-eabi-gcc -o "MicromouseV1.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m4 -T"S:\MicromouseSRC-K68\software\MicromouseV1\STM32F405RGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="MicromouseV1.map" -Wl,--gc-sections -static -u _printf_float --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
 	@echo 'Finished building target: $@'
 	@echo ' '
 
