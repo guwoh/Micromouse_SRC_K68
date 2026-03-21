@@ -33,8 +33,22 @@ typedef enum Action {LEFT, FORWARD, RIGHT, IDLE, BACK} Action;
 #define _1110 14
 #define _1111 15
 
+
+#define SEARCH 0
+#define SPEED  1
+
+extern int mode;
+
+extern uint8_t known[MAZE_SIZE][MAZE_SIZE];
 extern uint8_t maze[MAZE_SIZE][MAZE_SIZE];
 extern int16_t distances[MAZE_SIZE][MAZE_SIZE];
+extern int readyFlag;
+extern int destination_X;
+extern int destination_Y;
+extern uint16_t pathLength;
+extern uint16_t path[1000];
+
+extern Heading heading;
 
 struct Coordinate {
     int x;
@@ -55,5 +69,6 @@ Action solver();
 Action leftWallFollower();
 Action floodFill();
 Action peekNextAction();
+void buildPath();
 
 #endif /* INC_ALGORITHM_H_ */

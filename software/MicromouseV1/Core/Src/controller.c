@@ -131,11 +131,11 @@ void set_mright(int16_t pwm) {
 }
 
 int32_t mm_to_counts(float speed) {
-	return (speed * 16384) / (32 * 3.1416);
+	return (speed * 16384) / (29 * 3.1416);
 }
 
 float counts_to_mm(float count) {
-	return (count * 32 * 3.1416) / 16384;
+	return (count * 29 * 3.1416) / 16384;
 }
 
 void update_speed(void) {
@@ -278,8 +278,9 @@ void move_one_cell(ADC_HandleTypeDef *hadc1, I2C_HandleTypeDef *hi2c2, I2C_Handl
 	targetSpeedW = 0;
 	targetSpeedX = moveSpeedX;
 	do {
+		debug1 = (need_to_decelerate(distanceLeft, (moveSpeedX / 100), (stopSpeedX / 100)) * 100);
 
-		if ((need_to_decelerate(distanceLeft * 2, (moveSpeedX / 100), (stopSpeedX / 100)) * 100) < decX) {
+		if ((need_to_decelerate(distanceLeft, (moveSpeedX / 100), (stopSpeedX / 100)) * 100) < (decX)) {
 			targetSpeedX = moveSpeedX;
 
 		} else {
@@ -372,14 +373,12 @@ void turn_left(I2C_HandleTypeDef *hi2c2, I2C_HandleTypeDef *hi2c3) {
 void wall_front_adjust(ADC_HandleTypeDef *hadc1) {
 	uint32_t curt = Millis;
 	uint32_t time = 300;
-	if (RFSensor < RFThreshold1 - 200)
-		time = time * 2;
 	while (Millis - curt < time) {
 		if (controlFlag) {
 			controlFlag = 0;
 			read_sensor(hadc1);
-			int16_t pwmLeft = (LFThreshold1 - LFSensor) * 0.6;
-			int16_t pwmRight = (RFThreshold1 - RFSensor) * 0.4;
+			int16_t pwmLeft = (LFThreshold1 - LFSensor) * 0.5;
+			int16_t pwmRight = (RFThreshold1 - RFSensor) * 0.3;
 			if (pwmLeft > 350) pwmLeft = 0;
 			else if(pwmLeft < -350) pwmLeft = 0;
 			if (pwmRight > 350) pwmRight = 0;
@@ -394,6 +393,7 @@ void wall_front_adjust(ADC_HandleTypeDef *hadc1) {
 
 void turn_90left(I2C_HandleTypeDef *hi2c2, I2C_HandleTypeDef *hi2c3) {
 	resetEverything();
+	turnLeftFlag = 1;
 	int16_t errorL;
 	int16_t oldErrorL = 0;
 	int16_t errorR;
@@ -407,8 +407,8 @@ void turn_90left(I2C_HandleTypeDef *hi2c2, I2C_HandleTypeDef *hi2c3) {
 			errorR = turnDistance - enc_cnt_right;
 			integralTurnL += errorL;
 			integralTurnR += errorR;
-			leftPwm = 0.054 * errorL + 10 * (errorL - oldErrorL) + 0.00016 * integralTurnL;
-			rightPwm = 0.054 * errorR + 10 * (errorR - oldErrorR) + 0.00016 * integralTurnR;
+			leftPwm = 0.058 * errorL + 10 * (errorL - oldErrorL) + 0.00018 * integralTurnL;
+			rightPwm = 0.058 * errorR + 10 * (errorR - oldErrorR) + 0.00018 * integralTurnR;
 			leftPwm += 275;
 			rightPwm += 275;
 			if (leftPwm > 1000) leftPwm = 1000;
@@ -427,6 +427,7 @@ void turn_90left(I2C_HandleTypeDef *hi2c2, I2C_HandleTypeDef *hi2c3) {
 
 void turn_90right(I2C_HandleTypeDef *hi2c2, I2C_HandleTypeDef *hi2c3) {
 	resetEverything();
+	turnRightFlag = 1;
 	int16_t errorL;
 	int16_t oldErrorL = 0;
 	int16_t errorR;
@@ -440,8 +441,8 @@ void turn_90right(I2C_HandleTypeDef *hi2c2, I2C_HandleTypeDef *hi2c3) {
 			errorR = turnDistance + enc_cnt_right;
 			integralTurnL += errorL;
 			integralTurnR += errorR;
-			leftPwm = 0.054 * errorL + 10 * (errorL - oldErrorL) + 0.00016 * integralTurnL;
-			rightPwm = 0.054 * errorR + 10 * (errorR - oldErrorR) + 0.00016 * integralTurnR;
+			leftPwm = 0.058 * errorL + 10 * (errorL - oldErrorL) + 0.00016 * integralTurnL;
+			rightPwm = 0.058 * errorR + 10 * (errorR - oldErrorR) + 0.00016 * integralTurnR;
 			leftPwm += 275;
 			rightPwm += 265;
 			if (leftPwm > 1000) leftPwm = 1000;
@@ -453,7 +454,7 @@ void turn_90right(I2C_HandleTypeDef *hi2c2, I2C_HandleTypeDef *hi2c3) {
 			oldErrorR = errorR;
 
 		}
-	} while (enc_cnt_left < (turnDistance-400) || -enc_cnt_right < (turnDistance-400));
+	} while (enc_cnt_left < (turnDistance) || -enc_cnt_right < (turnDistance));
 	set_mleft(0);
 	set_mright(0);
 }

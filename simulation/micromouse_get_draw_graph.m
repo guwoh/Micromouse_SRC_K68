@@ -1,3 +1,5 @@
+%% Tune PID
+
 figure;
 y1 = load("data150pwm.txt");
 y2 = load("data200pwm.txt");
@@ -69,3 +71,55 @@ legend('Điểm dữ liệu','Đường thẳng fit');
 
 T_m = 152;
 K_m = 500;
+
+%% Motion profile
+
+
+D = 0.18;      % distance (m)
+Vmax = 0.5;    % max velocity (m/s)
+Amax = 2;      % max acceleration (m/s^2)
+dt = 0.001;    % control period (1 kHz)
+
+ta = Vmax/Amax;
+sa = 0.5*Amax*ta^2;
+
+if 2*sa > D
+    % triangle profile
+    ta = sqrt(D/Amax);
+    tc = 0;
+else
+    % trapezoidal
+    sc = D - 2*sa;
+    tc = sc / Vmax;
+end
+
+t_total = 2*ta + tc;
+t = 0:dt:t_total;
+
+v = zeros(size(t));
+
+for i = 1:length(t)
+    if t(i) < ta
+        v(i) = Amax * t(i);
+
+    elseif t(i) < ta + tc
+        v(i) = Vmax;
+
+    else
+        v(i) = Vmax - Amax*(t(i)-ta-tc);
+    end
+end
+
+x = cumtrapz(t, v);
+
+figure
+plot(t, v);
+xlabel('time');
+ylabel('velocity');
+
+figure
+plot(t, x);
+xlabel('time');
+ylabel('position');
+
+profile = [t' v' x'];

@@ -70,6 +70,176 @@ static void MX_USART3_UART_Init(void);
 
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
+void searchRun() {
+	uint8_t action = solver();
+	wall_R_Check2 = 0;
+	wall_L_Check2 = 0;
+	if (action == FORWARD) {
+		delay_ms(50);
+		resetEverything();
+		distanceLeft = oneCellDistance * 2;
+		move_one_cell(&hadc1, &hi2c2, &hi2c3);
+	} else if (action == RIGHT) {
+		if ((LFSensor < LFThreshold2) || (RFSensor < RFThreshold2))
+			wall_L_Check2 = 0;
+		wall_R_Check2 = 0;
+
+		if ((LFSensor > LFThreshold2) && (RFSensor > RFThreshold2)) {
+			wall_L_Check2 = 1;
+			delay_ms(50);
+			wall_front_adjust(&hadc1);
+		}
+		delay_ms(150);
+		if (turnRightFlag)
+			delay_ms(100);
+		resetEverything();
+		distanceLeft = turnDistance;
+		turn_90right(&hi2c2, &hi2c3);
+	} else if (action == LEFT) {
+		wall_L_Check2 = 0;
+		if ((LFSensor < LFThreshold2) || (RFSensor < RFThreshold2))
+			wall_R_Check2 = 0;
+		if ((LFSensor > LFThreshold2) && (RFSensor > RFThreshold2)) {
+			wall_R_Check2 = 1;
+			delay_ms(50);
+			wall_front_adjust(&hadc1);
+		}
+		delay_ms(150);
+		if (turnLeftFlag)
+			delay_ms(100);
+		resetEverything();
+		distanceLeft = turnDistance;
+		turn_90left(&hi2c2, &hi2c3);
+	}
+
+	set_mleft(0);
+	set_mright(0);
+}
+
+void testRunStraigth() {
+	while (!BTN1()) {
+		if (BTN2()) {
+			BTN2_Flag = 1;
+			R_LED_ON
+			;
+		}
+		L_LED_ON
+		;
+	}
+	blink_led_wait();
+	distanceLeft = oneCellDistance * 4 * 2;
+	for (int i = 0; i < 4; i++) {
+		move_one_cell(&hadc1, &hi2c2, &hi2c3);
+	}
+	set_mleft(0);
+	set_mright(0);
+}
+void run() {
+	mode = SEARCH;
+	while (!BTN1()) {
+		if (BTN2()) {
+			BTN2_Flag = 1;
+			R_LED_ON
+			;
+		}
+		L_LED_ON
+		;
+	}
+	oneCellDistance = 32370;
+	decX = mm_to_counts(600);
+	blink_led_wait();
+	start(&hadc1);
+	L_LED_ON
+	;
+	delay_ms(1200);
+	L_LED_OFF
+	;
+	readyFlag = 1;
+	L_LED_ON
+	;
+
+	while (readyFlag > 0 && !BTN2_Flag) {
+		searchRun();
+	}
+	BTN2_Flag = 0;
+	L_LED_OFF
+	;
+	R_LED_OFF
+	;
+	set_mleft(0);
+	set_mright(0);
+
+	while (!BTN1()) {
+		if (BTN2()) {
+			BTN2_Flag = 1;
+			R_LED_ON
+			;
+		}
+		L_LED_ON
+		;
+	}
+	blink_led_wait();
+	R_LED_OFF
+	;
+	heading = NORTH;
+	mode = SPEED;
+	updateDistances();
+	buildPath();
+	uint16_t pathNow = 0;
+	uint16_t oldPath = 0;
+	position.x = 0;
+	position.y = 0;
+	oneCellDistance = 32100;
+
+	//	distanceLeft = 5395;
+	//	move_one_cell(&hadc1, &hi2c2, &hi2c3);
+	resetEverything();
+	while (pathNow < pathLength && !BTN2_Flag) {
+		if (path[pathNow] == FORWARD) {
+			oldPath = pathNow;
+			resetEverything();
+			while (path[pathNow] == FORWARD) {
+				pathNow++;
+			}
+			distanceLeft = oneCellDistance * (pathNow - oldPath) * 2;
+			if (distanceLeft > oneCellDistance * 4) {
+				decX = mm_to_counts(350);
+			} else
+				decX = mm_to_counts(600);
+			for (int i = oldPath; i < pathNow; i++)
+				move_one_cell(&hadc1, &hi2c2, &hi2c3);
+			set_mleft(0);
+			set_mright(0);
+		} else if (path[pathNow] == RIGHT) {
+			if ((LFSensor > LFThreshold2) && (RFSensor > RFThreshold2)) {
+				delay_ms(50);
+				wall_front_adjust(&hadc1);
+			}
+			delay_ms(150);
+			if (turnRightFlag)
+				delay_ms(100);
+			resetEverything();
+			distanceLeft = turnDistance;
+			turn_90right(&hi2c2, &hi2c3);
+			pathNow++;
+		} else if (path[pathNow] == LEFT) {
+			if ((LFSensor > LFThreshold2) && (RFSensor > RFThreshold2)) {
+				wall_R_Check2 = 1;
+				delay_ms(50);
+				wall_front_adjust(&hadc1);
+			}
+			delay_ms(150);
+			if (turnLeftFlag)
+				delay_ms(100);
+			resetEverything();
+			distanceLeft = turnDistance;
+			turn_90left(&hi2c2, &hi2c3);
+			pathNow++;
+		}
+	}
+	BTN2_Flag = 0;
+}
+
 int _write(int fd, char *ptr, int len) {
 	HAL_StatusTypeDef hstatus;
 
@@ -139,78 +309,18 @@ int main(void) {
 	/* USER CODE BEGIN 2 */
 	resetEverything();
 	init();
-	start(&hadc1);
-	L_LED_ON
-	;
-	delay_ms(1200);
-	L_LED_OFF
-	;
-//	uint32_t curt = Millis;
-//	while (Millis - curt < 100000) {
-//		if (controlFlag) {
-//			controlFlag = 0;
-////			read_sensor(&hadc1);
-//			printf("%f          %f\n", LFSensor, RFSensor);
-//		}
-//	}
-//	printf("%f\n%f\n", RSensor, LSensor);
+
+//	decX = mm_to_counts(350);
+//	testRunStraigth();
 	/* USER CODE END 2 */
 
 	/* Infinite loop */
 	/* USER CODE BEGIN WHILE */
 
 	while (1) {
+		run();
+//		printf("Hello\n");
 //		printf("{\"x\":%d,\"y\":%d,\"w\":%d}\r\n", position.x, position.y, maze[position.x][position.y]);
-//		read_sensor(&hadc1);
-//		wall_front_detect();
-		uint8_t action = solver();
-		wall_R_Check2 = 0;
-		wall_L_Check2 = 0;
-		if (action == FORWARD) {
-			delay_ms(100);
-			resetEverything();
-			distanceLeft = oneCellDistance;
-			move_one_cell(&hadc1, &hi2c2, &hi2c3);
-		} else if (action == RIGHT) {
-			if ((LFSensor < LFThreshold2) || (RFSensor < RFThreshold2))
-				wall_L_Check2 = 0;
-			wall_R_Check2 = 0;
-
-			if ((LFSensor > LFThreshold2) && (RFSensor > RFThreshold2)) {
-				wall_L_Check2 = 1;
-				delay_ms(100);
-				wall_front_adjust(&hadc1);
-			}
-			delay_ms(200);
-			resetEverything();
-			distanceLeft = turnDistance;
-			turn_90right(&hi2c2, &hi2c3);
-		} else if (action == LEFT) {
-			wall_L_Check2 = 0;
-			if ((LFSensor < LFThreshold2) || (RFSensor < RFThreshold2))
-				wall_R_Check2 = 0;
-			if ((LFSensor > LFThreshold2) && (RFSensor > RFThreshold2)) {
-				wall_R_Check2 = 1;
-				delay_ms(100);
-				wall_front_adjust(&hadc1);
-			}
-			delay_ms(200);
-			resetEverything();
-			distanceLeft = turnDistance;
-			turn_90left(&hi2c2, &hi2c3);
-		}
-//		} else if (action == BACK) {
-//			if ((LFSensor > LFThreshold2) && (RFSensor > RFThreshold2)) {
-//				delay_ms(200);
-//				wall_front_adjust(&hadc1);
-//			}
-//			delay_ms(200);
-//			distanceLeft = turnDistance;
-//			turn_180(&hi2c2, &hi2c3);
-//		}
-
-		set_mleft(0);
-		set_mright(0);
 		/* USER CODE END WHILE */
 
 		/* USER CODE BEGIN 3 */
@@ -513,7 +623,7 @@ static void MX_USART3_UART_Init(void) {
 
 	/* USER CODE END USART3_Init 1 */
 	huart3.Instance = USART3;
-	huart3.Init.BaudRate = 230400;
+	huart3.Init.BaudRate = 115200;
 	huart3.Init.WordLength = UART_WORDLENGTH_8B;
 	huart3.Init.StopBits = UART_STOPBITS_1;
 	huart3.Init.Parity = UART_PARITY_NONE;
@@ -631,6 +741,8 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim) {
 	if (htim->Instance == TIM3) {
 		read_sensor(&hadc1);
 		controlFlag = 1;
+		set_mleft(600);
+		set_mright(600);
 	}
 
 }

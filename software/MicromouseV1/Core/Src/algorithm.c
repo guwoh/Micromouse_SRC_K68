@@ -7,6 +7,11 @@
 
 #include <algorithm.h>
 
+
+int mode = SEARCH;
+
+int readyFlag = 0;
+uint8_t known[MAZE_SIZE][MAZE_SIZE] = {0};
 uint8_t maze[MAZE_SIZE][MAZE_SIZE] = { 0 };
 int16_t distances[MAZE_SIZE][MAZE_SIZE];
 struct Coordinate position;
@@ -15,6 +20,8 @@ int destination_X = 6;
 int destination_Y = 6;
 
 int reached_center = 0;
+uint16_t pathLength = 0;
+uint16_t path[1000];
 
 void initialize() {
     for (int i = 1; i < MAZE_SIZE - 1; ++i) {
@@ -39,6 +46,8 @@ void initialize() {
 void updateMaze() {
   int x = position.x;
   int y = position.y;
+
+  known[x][y] = 1;
 
   uint8_t walls = _0000;
   switch (heading) {
@@ -159,11 +168,18 @@ void resetDistances() {
         }
     }
     else {
+//        distances[0][1] = 0;
+
         distances[0][0] = 0;
     }
 }
 
 int isWallInDirection(int x, int y, Heading direction) {
+
+	if (mode == SPEED && known[x][y] == 0) {
+	    return 1;
+	}
+
     switch (direction) {
         case NORTH:
             if (maze[x][y] >= 8)
@@ -183,6 +199,63 @@ int isWallInDirection(int x, int y, Heading direction) {
             break;
     }
     return 0;
+}
+
+void buildPath() {
+
+    struct Coordinate cur = position;
+    Heading curHeading = heading;
+
+    pathLength = 0;
+
+    while (distances[cur.x][cur.y] != 0) {
+        Action bestAction = IDLE;
+        int bestDist = 1000;
+
+        Action actions[3] = {FORWARD, LEFT, RIGHT};
+
+        for (int i = 0; i < 3; i++) {
+            Action a = actions[i];
+
+            Heading newHeading = curHeading;
+            struct Coordinate next = cur;
+    		if (next.x < 0|| next.x >= MAZE_SIZE ||
+    		next.y < 0 || next.y >= MAZE_SIZE)
+    			continue;
+
+            if (a == LEFT) newHeading = (curHeading + 3) % 4;
+            if (a == RIGHT) newHeading = (curHeading + 1) % 4;
+
+            if (a == FORWARD) {
+                if (curHeading == NORTH) next.y++;
+                else if (curHeading == SOUTH) next.y--;
+                else if (curHeading == EAST) next.x++;
+                else if (curHeading == WEST) next.x--;
+            }
+
+
+            if (isWallInDirection(cur.x, cur.y, newHeading))
+                continue;
+
+            if (distances[next.x][next.y] < bestDist) {
+                bestDist = distances[next.x][next.y];
+                bestAction = a;
+            }
+        }
+
+        path[pathLength++] = bestAction;
+
+        if (bestAction == LEFT)
+            curHeading = (curHeading + 3) % 4;
+        else if (bestAction == RIGHT)
+            curHeading = (curHeading + 1) % 4;
+        else if (bestAction == FORWARD) {
+            if (curHeading == NORTH) cur.y++;
+            else if (curHeading == SOUTH) cur.y--;
+            else if (curHeading == EAST) cur.x++;
+            else if (curHeading == WEST) cur.x--;
+        }
+    }
 }
 
 void updateDistances() {
@@ -296,8 +369,10 @@ Action solver() {
     }
 
     else if (reached_center && distances[position.x][position.y] == 0) {
+    	readyFlag = 0;
         reached_center = 0;
     }
+
 
     updateMaze();
     updateDistances();
@@ -380,7 +455,6 @@ Action floodFill() {
 
     return optimal_move;
 }
-
 
 
 Action leftWallFollower() {

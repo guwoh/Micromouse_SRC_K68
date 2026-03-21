@@ -7,6 +7,8 @@
 
 #include "main.h"
 
+uint8_t BTN1_Flag = 0;
+uint8_t BTN2_Flag = 0;
 
 uint8_t BTN1() {
 	return HAL_GPIO_ReadPin(GPIOC, GPIO_PIN_7);
@@ -22,4 +24,14 @@ void start(ADC_HandleTypeDef *hadc1) {
 		}
 	}
 }
+
+void blink_led_wait() {
+	for(uint8_t i = 0; i < 10; i ++) {
+		L_LED_ON;
+		delay_ms(200);
+		L_LED_OFF;
+		delay_ms(200);
+	}
+}
+
 

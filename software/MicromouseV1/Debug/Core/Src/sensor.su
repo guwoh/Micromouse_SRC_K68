@@ -3,4 +3,4 @@
 ../Core/Src/sensor.c:92:6:wall_detect	4	static
 ../Core/Src/sensor.c:111:6:wall_front_detect	4	static
 ../Core/Src/sensor.c:133:9:sensorError	8	static
-../Core/Src/sensor.c:148:6:wall_detect2	8	static
+../Core/Src/sensor.c:148:6:wall_detect2	4	static

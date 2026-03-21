@@ -161,19 +161,15 @@ void wall_detect2() {
 	}
 	if (RSensor > (RThreshold - 400)) {
 		wall_R_Check2 = 1;
-		R_LED_ON;
 	}
 	else{
-		R_LED_OFF;
 		wall_R_Check2 = 0;
 
 	}
 	if (LSensor > (LThreshold - 500)) {
 		wall_L_Check2 = 1;
-		L_LED_ON;
 	}
 	else{
-		L_LED_OFF;
 		wall_L_Check2 = 0;
 	}
 }

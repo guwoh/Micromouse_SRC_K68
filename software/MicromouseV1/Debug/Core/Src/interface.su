@@ -1,3 +1,4 @@
-../Core/Src/interface.c:11:9:BTN1	8	static
-../Core/Src/interface.c:14:9:BTN2	8	static
-../Core/Src/interface.c:17:6:start	16	static
+../Core/Src/interface.c:13:9:BTN1	8	static
+../Core/Src/interface.c:16:9:BTN2	8	static
+../Core/Src/interface.c:19:6:start	16	static
+../Core/Src/interface.c:28:6:blink_led_wait	16	static
