@@ -17,12 +17,12 @@ int16_t LFSensor_raw;
 int16_t RSensor_raw;
 int16_t LSensor_raw;
 
-uint16_t RThreshold  = 700;
-uint16_t LThreshold = 700;
-uint16_t RFThreshold1 = 3180;
-uint16_t LFThreshold1 = 1400;
-uint16_t RFThreshold2 = 600;
-uint16_t LFThreshold2 = 300;
+int16_t RThreshold  = 700;
+int16_t LThreshold = 700;
+int16_t RFThreshold1 = 1500;
+int16_t LFThreshold1 = 1500;
+int16_t RFThreshold2 = 280;
+int16_t LFThreshold2 = 390;
 float gainSensor;
 
 uint8_t wall_R_Check = 0;
@@ -42,6 +42,7 @@ void init_sensor(ADC_HandleTypeDef *hadc) {
 	LF_EM_OFF;
 	RF_EM_OFF;
 	SIDE_EM_OFF;
+//	HAL_ADC_Start_DMA(hadc, (uint32_t*) sensorData, 4);
 	read_sensor(hadc);
 	controlFlag = 0;
 	gainSensor = (float) RSensor_raw / (float) LSensor_raw;
@@ -56,6 +57,7 @@ void read_sensor(ADC_HandleTypeDef *hadc) {
 
 	//right front sensor
 	HAL_ADC_Start_DMA(hadc, (uint32_t*) sensorData, 4);
+//	elapseMicros(10, curt);
 	RF_EM_ON
 	;
 	elapseMicros(60, curt);

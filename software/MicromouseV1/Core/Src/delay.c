@@ -19,7 +19,7 @@ void Systick_Configuration(void)
 	SystemCoreClockUpdate();
 
 	//systemFrequency = SystemCoreClock / 1000000;
-	if (SysTick_Config (SystemCoreClock / 1000)) //1ms per interrupt
+	if (SysTick_Config (SystemCoreClock / 1000000)) //1ms per interrupt
 		while (1);
 
 	Millis = 0;//reset Millis

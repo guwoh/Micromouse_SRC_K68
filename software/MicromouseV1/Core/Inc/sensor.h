@@ -24,12 +24,12 @@ extern int16_t RFSensor_raw;
 extern int16_t LFSensor_raw;
 extern int16_t RSensor_raw;
 extern int16_t LSensor_raw;
-extern uint16_t RThreshold;
-extern uint16_t LThreshold;
-extern uint16_t RFThreshold1;
-extern uint16_t LFThreshold1;
-extern uint16_t RFThreshold2;
-extern uint16_t LFThreshold2;
+extern int16_t RThreshold;
+extern int16_t LThreshold;
+extern int16_t RFThreshold1;
+extern int16_t LFThreshold1;
+extern int16_t RFThreshold2;
+extern int16_t LFThreshold2;
 
 extern float gainSensor;
 extern uint8_t wall_R_Check;

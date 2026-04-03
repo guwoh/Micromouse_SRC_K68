@@ -1,6 +1,6 @@
 ../Core/Src/sensor.c:41:6:init_sensor	16	static
-../Core/Src/sensor.c:53:6:read_sensor	24	static
-../Core/Src/sensor.c:92:6:wall_detect	4	static
-../Core/Src/sensor.c:111:6:wall_front_detect	4	static
-../Core/Src/sensor.c:133:9:sensorError	8	static
-../Core/Src/sensor.c:148:6:wall_detect2	4	static
+../Core/Src/sensor.c:54:6:read_sensor	24	static
+../Core/Src/sensor.c:94:6:wall_detect	4	static
+../Core/Src/sensor.c:113:6:wall_front_detect	4	static
+../Core/Src/sensor.c:135:9:sensorError	8	static
+../Core/Src/sensor.c:150:6:wall_detect2	4	static

@@ -52,6 +52,9 @@ TIM_HandleTypeDef htim3;
 UART_HandleTypeDef huart3;
 
 /* USER CODE BEGIN PV */
+int32_t posLeft[7001];
+int32_t posRight[7001];
+
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -86,7 +89,7 @@ void searchRun() {
 
 		if ((LFSensor > LFThreshold2) && (RFSensor > RFThreshold2)) {
 			wall_L_Check2 = 1;
-			delay_ms(50);
+			delay_ms(10);
 			wall_front_adjust(&hadc1);
 		}
 		delay_ms(150);
@@ -101,7 +104,7 @@ void searchRun() {
 			wall_R_Check2 = 0;
 		if ((LFSensor > LFThreshold2) && (RFSensor > RFThreshold2)) {
 			wall_R_Check2 = 1;
-			delay_ms(50);
+			delay_ms(10);
 			wall_front_adjust(&hadc1);
 		}
 		delay_ms(150);
@@ -145,8 +148,8 @@ void run() {
 		L_LED_ON
 		;
 	}
-	oneCellDistance = 32370;
-	decX = mm_to_counts(600);
+//	oneCellDistance = 32370;
+	decX = mm_to_counts(960);
 	blink_led_wait();
 	start(&hadc1);
 	L_LED_ON
@@ -189,7 +192,7 @@ void run() {
 	uint16_t oldPath = 0;
 	position.x = 0;
 	position.y = 0;
-	oneCellDistance = 32100;
+//	oneCellDistance = 32100;
 
 	//	distanceLeft = 5395;
 	//	move_one_cell(&hadc1, &hi2c2, &hi2c3);
@@ -202,10 +205,10 @@ void run() {
 				pathNow++;
 			}
 			distanceLeft = oneCellDistance * (pathNow - oldPath) * 2;
-			if (distanceLeft > oneCellDistance * 4) {
-				decX = mm_to_counts(350);
-			} else
-				decX = mm_to_counts(600);
+//			if (distanceLeft > oneCellDistance * 4) {
+//				decX = mm_to_counts(350);
+//			} else
+//				decX = mm_to_counts(600);
 			for (int i = oldPath; i < pathNow; i++)
 				move_one_cell(&hadc1, &hi2c2, &hi2c3);
 			set_mleft(0);
@@ -269,6 +272,37 @@ void init(void) {
 	initialize();
 }
 
+void take_data() {
+	controlFlag = 1;
+	int pwm = 250;
+	tick = 0;
+	for (int i = 0; i < 3; i++) {
+		set_mleft(0);
+		set_mright(0);
+		delay_ms(1000);
+		set_mright(pwm);
+		set_mleft(pwm);
+		delay_ms(1000);
+		pwm += 50;
+	}
+	controlFlag = 0;
+	pwm = 0;
+	int stand = 0;
+	for(int i = 0; i < 6000; i ++)
+	{
+		if (i - stand <= 1000)
+			printf("%d   %ld   %ld   %d\n ", i + 1, posLeft[i], posRight[i], 0);
+		else if (i - stand <= 2000) {
+			printf("%d   %ld   %ld   %d\n ", i + 1, posLeft[i], posRight[i], pwm);
+			if (i - stand == 2000)
+				pwm += 100;
+		}
+
+		delay_ms(1);
+//		printf("Hello\n");
+	}
+}
+
 /* USER CODE END 0 */
 
 /**
@@ -309,9 +343,35 @@ int main(void) {
 	/* USER CODE BEGIN 2 */
 	resetEverything();
 	init();
-
-//	decX = mm_to_counts(350);
-//	testRunStraigth();
+	L_LED_ON;
+//	start(&hadc1);
+//	blink_led_wait();
+//	stopSpeedX = mm_to_counts(400);
+//	distanceLeft = oneCellDistance * 2 * 1;
+//	move_one_cell(&hadc1, &hi2c2, &hi2c3);
+////	move_one_cell(&hadc1, &hi2c2, &hi2c3);
+////	move_one_cell(&hadc1, &hi2c2, &hi2c3);
+////	move_one_cell(&hadc1, &hi2c2, &hi2c3);
+//	L_LED_OFF;
+//	turn_right(&hi2c2, &hi2c3);
+//	stopSpeedX = 0;
+////	distanceLeft = oneCellDistance * 2 * 1;
+////	move_one_cell(&hadc1, &hi2c2, &hi2c3);
+//	turn_left(&hi2c2, &hi2c3);
+//	turn_right(&hi2c2, &hi2c3);
+//	turn_right(&hi2c2, &hi2c3);
+//	turn_left(&hi2c2, &hi2c3);
+//	distanceLeft = oneCellDistance * 2 * 1;
+//	move_one_cell(&hadc1, &hi2c2, &hi2c3);
+////	turn_right(&hi2c2, &hi2c3);
+////	distanceLeft = oneCellDistance * 2 * 1;
+////	move_one_cell(&hadc1, &hi2c2, &hi2c3);
+////	turn_right(&hi2c2, &hi2c3);
+//	set_mleft(0);
+//	set_mright(0);
+//	for(int i = 0; i < tick; i++)
+//		printf("%lf   %lf  \n", debug1[i], debug2[i]);
+//	blink_led_wait();
 	/* USER CODE END 2 */
 
 	/* Infinite loop */
@@ -319,8 +379,9 @@ int main(void) {
 
 	while (1) {
 		run();
-//		printf("Hello\n");
-//		printf("{\"x\":%d,\"y\":%d,\"w\":%d}\r\n", position.x, position.y, maze[position.x][position.y]);
+//		printf("%lf   %lf  \n", LFSensor, RFSensor);
+//		delay_ms(10);
+
 		/* USER CODE END WHILE */
 
 		/* USER CODE BEGIN 3 */
@@ -623,7 +684,7 @@ static void MX_USART3_UART_Init(void) {
 
 	/* USER CODE END USART3_Init 1 */
 	huart3.Instance = USART3;
-	huart3.Init.BaudRate = 115200;
+	huart3.Init.BaudRate = 230400;
 	huart3.Init.WordLength = UART_WORDLENGTH_8B;
 	huart3.Init.StopBits = UART_STOPBITS_1;
 	huart3.Init.Parity = UART_PARITY_NONE;
@@ -739,10 +800,10 @@ void HAL_I2C_MemRxCpltCallback(I2C_HandleTypeDef *hi2c) {
 }
 void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim) {
 	if (htim->Instance == TIM3) {
+		read_enc(&hi2c2, &hi2c3);
 		read_sensor(&hadc1);
 		controlFlag = 1;
-		set_mleft(600);
-		set_mright(600);
+
 	}
 
 }

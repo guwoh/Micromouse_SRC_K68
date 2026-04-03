@@ -18,10 +18,6 @@ uint8_t BTN2() {
 }
 void start(ADC_HandleTypeDef *hadc1) {
 	while (LFSensor < LFThreshold1) {
-		if (controlFlag) {
-			controlFlag = 0;
-			read_sensor(hadc1);
-		}
 	}
 }
 
