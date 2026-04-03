@@ -25,7 +25,9 @@ int decX_Turn = 800;
 float accW = 180; //rad/s/s
 float decW = 180;
 float kpX = 2;
-float kdX = 0.4;
+float kdX = 0;
+float kiX = 0.004;
+float integralX = 0;
 float kpW = 4;
 float kdW = 14;
 
@@ -37,7 +39,7 @@ int32_t posPwmX = 0;
 int32_t posPwmW = 0;
 
 float moveSpeedX = 400;
-float stopSpeedX = 0;
+float stopSpeedX = 100;
 int moveSpeedX_Turn = 200;
 int stopSpeedX_Turn = 40;
 
@@ -57,9 +59,8 @@ float kpSensor = 0.08;
 float integralTurnL = 0;
 float integralTurnR = 0;
 
-int16_t pwmBuff = 0;
+int32_t pwmBuff = 0;
 int8_t accFlag = 0;
-
 
 float angLeftW = 0;
 float angRightW = 0;
@@ -201,8 +202,7 @@ void update_angle_speed() {
 		curSpeedW += accW / 1000.0f;
 		if (curSpeedW > targetSpeedW)
 			curSpeedW = targetSpeedW;
-	}
-	else if(curSpeedW > targetSpeedW) {
+	} else if (curSpeedW > targetSpeedW) {
 		curSpeedW -= decW / 1000.0f;
 		if (curSpeedW < targetSpeedW)
 			curSpeedW = targetSpeedW;
@@ -221,9 +221,8 @@ void calculate_motor_pwm(void) {
 	encoderAccumulate += (float) encoderFeedbackW * 0.1;
 	int rawSensorError = sensorError();
 //	sensorFeedback = 0;
-	sensorFeedback = kpSensor * rawSensorError;
-	+kdSensor * (rawSensorError - oldSensorFeedback);
-	debug1[0] = rawSensorError;
+	sensorFeedback = kpSensor * rawSensorError
+			+ kdSensor * (rawSensorError - oldSensorFeedback);
 	oldSensorFeedback = rawSensorError;
 	if (sensorFlag)
 		rotationalFeedback = encoderFeedbackW - sensorFeedback;
@@ -238,15 +237,16 @@ void calculate_motor_pwm(void) {
 
 	posErrorW = curSpeedW - rotationalFeedback;
 
-	posPwmX = kpX * posErrorX + kdX * (posErrorX - oldPosErrorX);
+	posPwmX = kpX * posErrorX + kdX * (posErrorX - oldPosErrorX) + kiX * integralX;
 	posPwmW = kpW * posErrorW + kdW * (posErrorW - oldPosErrorW);
 
+	integralX += posErrorX;
 	oldPosErrorX = posErrorX;
 	oldPosErrorW = posErrorW;
 	if (accFlag)
-		feedForward = 4.9 * curSpeedX + 16.5 * accX / 1000000 - 28;
+		feedForward = 5.4 * curSpeedX + 16.5 * accX / 1000000 - 28;
 	else
-		feedForward = 4.9 * curSpeedX - 16.5 * accX / 1000000 + 28;
+		feedForward = 5.4 * curSpeedX + 16.5 * accX / 1000000 + 28;
 
 	int leftBaseSpeed = feedForward + posPwmX - posPwmW + pwmBuff;
 	int rightBaseSpeed = feedForward + posPwmX + posPwmW + pwmBuff;
@@ -278,11 +278,13 @@ void calculate_motor_pwm_turn_right() {
 
 	float omega = mm_to_counts(curSpeedW * length / 2000.0f);
 
-	feedForwardLeft = 5.4 * (moveSpeedX / 1000.0f + omega) + 16 * accX / 1000000 - 28;
-	feedForwardRight = 5.4 * (moveSpeedX / 1000.0f - omega) - 16 * accX / 1000000 - 28;
+	feedForwardLeft = 5.4 * (moveSpeedX / 1000.0f + omega) + 16 * accX / 1000000
+			- 28;
+	feedForwardRight = 5.4 * (moveSpeedX / 1000.0f - omega)
+			- 16 * accX / 1000000 - 28;
 
 	errorLeft = (moveSpeedX / 1000.0f + omega - encoderChangeLeft);
-	errorRight = (moveSpeedX /1000.0f - omega - encoderChangeRight);
+	errorRight = (moveSpeedX / 1000.0f - omega - encoderChangeRight);
 	angLeftW = errorLeft * 20 + (errorLeft - oldAngLeftW) * 10;
 	angRightW = errorRight * 20 + (errorRight - oldAngRightW) * 10;
 
@@ -307,11 +309,13 @@ void calculate_motor_pwm_turn_left() {
 
 	float omega = mm_to_counts(curSpeedW * length / 2000.0f);
 
-	feedForwardLeft = 5.4 * (moveSpeedX / 1000.0f - omega) + 16 * accX / 1000000 - 28;
-	feedForwardRight = 5.4 * (moveSpeedX / 1000.0f + omega) - 16 * accX / 1000000 - 28;
+	feedForwardLeft = 5.4 * (moveSpeedX / 1000.0f - omega) + 16 * accX / 1000000
+			- 28;
+	feedForwardRight = 5.4 * (moveSpeedX / 1000.0f + omega)
+			- 16 * accX / 1000000 - 28;
 
 	errorLeft = (moveSpeedX / 1000.0f - omega - encoderChangeLeft);
-	errorRight = (moveSpeedX /1000.0f + omega - encoderChangeRight);
+	errorRight = (moveSpeedX / 1000.0f + omega - encoderChangeRight);
 	angLeftW = errorLeft * 20 + (errorLeft - oldAngLeftW) * 10;
 	angRightW = errorRight * 20 + (errorRight - oldAngRightW) * 10;
 
@@ -346,10 +350,10 @@ void speed_profile() {
 	calculate_motor_pwm();
 }
 
-int16_t pwm_buff() {
-	if(distanceLeft < 200 && distanceLeft > 0) {
+float pwm_buff() {
+	if (distanceLeft < 3000) {
 		pwmBuff += oneCellDistance * 2 - encoderCount + oldEncoderCount;
-		return pwmBuff * 0.000001;
+		return pwmBuff * 0.0000000001;
 	}
 	return 0;
 }
@@ -381,7 +385,7 @@ void move_one_cell(ADC_HandleTypeDef *hadc1, I2C_HandleTypeDef *hi2c2,
 //			pwm_buff();
 			speed_profile();
 			if (encoderCount > (oneCellDistance + 3000)
-					&& encoderCount < (oneCellDistance + 6000)) {
+					&& encoderCount < (oneCellDistance + 9000)) {
 				wall_detect2();
 //				wall_L_sum += wall_L_Check2;
 //				wall_R_sum += wall_R_Check2;
@@ -414,8 +418,7 @@ void turn_right(I2C_HandleTypeDef *hi2c2, I2C_HandleTypeDef *hi2c3) {
 		if (controlFlag) {
 			if (tick < 290) {
 				targetSpeedW = angularVelocity;
-			}
-			else if (tick >= 290) {
+			} else if (tick >= 290) {
 				targetSpeedW = 0;
 			}
 			controlFlag = 0;
@@ -441,8 +444,7 @@ void turn_left(I2C_HandleTypeDef *hi2c2, I2C_HandleTypeDef *hi2c3) {
 		if (controlFlag) {
 			if (tick < 290) {
 				targetSpeedW = angularVelocity;
-			}
-			else if (tick >= 290) {
+			} else if (tick >= 290) {
 				targetSpeedW = 0;
 			}
 			controlFlag = 0;

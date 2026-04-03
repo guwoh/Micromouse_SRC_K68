@@ -149,7 +149,7 @@ void run() {
 		;
 	}
 //	oneCellDistance = 32370;
-	decX = mm_to_counts(960);
+	decX = mm_to_counts(900);
 	blink_led_wait();
 	start(&hadc1);
 	L_LED_ON
@@ -363,12 +363,12 @@ int main(void) {
 //	turn_left(&hi2c2, &hi2c3);
 //	distanceLeft = oneCellDistance * 2 * 1;
 //	move_one_cell(&hadc1, &hi2c2, &hi2c3);
-////	turn_right(&hi2c2, &hi2c3);
-////	distanceLeft = oneCellDistance * 2 * 1;
-////	move_one_cell(&hadc1, &hi2c2, &hi2c3);
-////	turn_right(&hi2c2, &hi2c3);
-//	set_mleft(0);
-//	set_mright(0);
+//	turn_right(&hi2c2, &hi2c3);
+//	distanceLeft = oneCellDistance * 2 * 1;
+//	move_one_cell(&hadc1, &hi2c2, &hi2c3);
+//	turn_right(&hi2c2, &hi2c3);
+	set_mleft(0);
+	set_mright(0);
 //	for(int i = 0; i < tick; i++)
 //		printf("%lf   %lf  \n", debug1[i], debug2[i]);
 //	blink_led_wait();
@@ -378,7 +378,7 @@ int main(void) {
 	/* USER CODE BEGIN WHILE */
 
 	while (1) {
-		run();
+//		run();
 //		printf("%lf   %lf  \n", LFSensor, RFSensor);
 //		delay_ms(10);
 
